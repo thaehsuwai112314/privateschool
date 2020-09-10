@@ -13,7 +13,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return 'This is computer student page';
+        //return 'This is computer student page';
+        return 'This is computer student Khun Kyaw Min Htun page';
     }
 
     /**
