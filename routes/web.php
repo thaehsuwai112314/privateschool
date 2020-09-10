@@ -18,4 +18,12 @@ Route::get('/', function () {
     return 'Hello Laravel';
 });
 
-Route::resource('student','StudentController')
+Route::get('admin', function () {
+    
+    return view('backendtemplate');
+});
+
+Route::resource('student','StudentController');
+
+
+
