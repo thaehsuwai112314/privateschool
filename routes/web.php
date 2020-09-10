@@ -15,15 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     //return view('welcome');
-    return 'Hello Laravel';
+    return 'Hello Laravel';//edit by Thae Hsu Wai
 });
 
-Route::get('admin', function () {
-    
-    return view('backendtemplate');
-});
+Route::resource('backends','BackendController');
 
-Route::resource('student','StudentController');
+
+
 
 
 
