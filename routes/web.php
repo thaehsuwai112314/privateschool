@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     //return view('welcome');
-    return 'Hello Laravel';
+    return 'Hello Laravel';//edit by Thae Hsu Wai
 });
 
-Route::resource('student','StudentController')
+Route::resource('student','StudentController');//edit by KaiZar Hein
+
+Route::resource('studentone','StudentController');//edit by KhunKyawMinHtun
