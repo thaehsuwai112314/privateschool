@@ -18,4 +18,4 @@ Route::get('/', function () {
     return 'Hello Laravel';
 });
 
-Route::resource('student','StudentController')
+Route::resource('student','StudentController');
