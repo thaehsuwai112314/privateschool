@@ -19,4 +19,11 @@ Route::get('/', function () {
     //edit by Thae Hsu Wai
 });
 
+Route::resource('backends','BackendController');
+
+
+
+
+Route::resource('student','StudentController');//edit by Kai Zar Hein
+
 
