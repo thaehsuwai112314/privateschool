@@ -18,9 +18,13 @@ Route::get('/', function () {
     return 'Hello Laravel';//edit by Thae Hsu Wai
 });
 
+Route::resource('backends','BackendController');
+
+
+
 
 Route::resource('student','StudentController');//edit by Kai Zar Hein
 
-Route::resource('studentone','StudentController');//edit by KhunKyawMinHtun
+
 
 
