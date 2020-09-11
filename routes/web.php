@@ -19,7 +19,8 @@ Route::get('/', function () {
 });
 
 
-Route::resource('student','StudentController');//edit by KaiZar Hein
+Route::resource('student','StudentController');//edit by Kai Zar Hein
 
 Route::resource('studentone','StudentController');//edit by KhunKyawMinHtun
+
 
