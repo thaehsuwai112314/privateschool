@@ -26,7 +26,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -63,11 +63,13 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Student Detail:</h6>
-            <a class="collapse-item" href="buttons.html">All Student</a>
-            <a class="collapse-item" href="cards.html">Grades</a>
+            <a class="collapse-item" href="{{route('student.index')}}">Student Register</a>
+            <a class="collapse-item" href="{{route('student.index')}}">Student Register Detail</a>
           </div>
         </div>
       </li>
+
+       
 
        <!-- Nav Item - Teacher -->
       <li class="nav-item">
@@ -291,6 +293,7 @@
           </ul>
 
         </nav> --}}
+
        @yield('contend')
 
       </div>

@@ -21,6 +21,7 @@ Route::get('/', function () {
 
 Route::resource('backends','BackendController');
 
+Route::resource('students','StudentController');
 
 
 
