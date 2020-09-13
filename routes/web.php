@@ -13,22 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('frontend.index');
-//     //return 'Hello Laravel';
-//     //edit by Thae Hsu Wai
-// });
 
-// Route::get('contact', function () {
-//     return view('frontend.contact_us');
-// });
+
 
 Route::get('/', 'PageController@indexfun')->name('mainpage');
+
+// Route::resource('students','StudentController');
+
 
 Route::get('contacts', 'PageController@contactfun')->name('contactpage');
 
 
-Route::get('backends','PageController@backendfun');
+//Route::get('backends','PageController@backendfun');
+
+Route::resource('backends','Backend/BackendController');
+
 
 
 
@@ -40,3 +39,9 @@ Route::get('backends','PageController@backendfun');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('teacher','TeacherController');
+Route::resource('subject','SubjectController');
+Route::resource('class','ClassesController');
+Route::resource('timetable','TimetableController');
+Route::resource('grade','GradeController');
