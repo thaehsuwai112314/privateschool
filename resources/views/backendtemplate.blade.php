@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <title>Matrix-Ptivate School</title>
 
@@ -93,8 +94,15 @@
        <!-- Nav Item - Grade -->
       <li class="nav-item">
         <a class="nav-link" href="{{route('grade.index')}}">
-          <i class="fas fa-fw fa-angle-up"></i>
+          <i class="fas fa-fw fa-marker"></i>
           <span>Grade</span></a>
+      </li>
+
+       <!-- Nav Item - Grade -->
+      <li class="nav-item">
+        <a class="nav-link" href="{{route('examination.index')}}">
+          <i class="fas fa-fw fa-book-open"></i>
+          <span>Examination</span></a>
       </li>
 
 
@@ -360,7 +368,7 @@
   <!-- Page level custom scripts -->
   <script src="{{ asset('backendCss/js/demo/chart-area-demo.js') }}"></script>
   <script src="{{ asset('backendCss/js/demo/chart-pie-demo.js') }}"></script>
-
+  <script src="{{ asset('frontend/js/localstorage_custom.js') }}"></script>
 </body>
 
 </html>

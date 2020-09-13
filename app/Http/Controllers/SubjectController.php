@@ -20,7 +20,7 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        $subjects = Student::all();
+        $subjects = Subject::all();
          return view('backend.subject.index',compact('subjects'));
     }
 

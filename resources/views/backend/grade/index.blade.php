@@ -7,7 +7,7 @@
       <div class="row">
         <div class="col-10">
             <h1 class="h3 mb-4 text-gray-800">
-    <i class="fas fa-chalkboard-teacher"></i> 
+    <i class="fas fa-marker"></i> 
     Grade  List
   </h1>
          
@@ -39,7 +39,7 @@
               <td>{{$grade->name}}</td>             
              
               <td>
-                 <a href="{{route('grade.show',$grade->id)}}" class="btn btn-primary"><i class="fas fa-info fa-2x"></i></a>
+                 {{-- <a href="{{route('grade.show',$grade->id)}}" class="btn btn-primary"><i class="fas fa-info fa-2x"></i></a> --}}
                 <a href="{{route('grade.edit',$grade->id)}}" class="btn btn-warning"><i class="fas fa-edit fa-2x"></i></a>
                             <form method="post" action="{{route('grade.destroy',$grade->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
                                 @csrf

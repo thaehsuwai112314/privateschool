@@ -30,6 +30,7 @@
               <th>Day</th>
               <th>StartTime</th>
               <th>EndTime</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>

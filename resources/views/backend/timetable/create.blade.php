@@ -6,7 +6,7 @@
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <div class="row">
       <div class="col">
-        <h1 class="h3 mb-0 text-gray-800">New Timeable</h1>
+        <h1 class="h3 mb-0 text-gray-800"> <i class="fas fa-table"></i> New Timeable</h1>
       </div>
     </div>
   </div>
@@ -19,13 +19,7 @@
           <div class="form-group row {{ $errors->has('day') ? 'has-error' : '' }}">
             <label for="inputDay" class="col-sm-2 col-form-label">Day</label>
             <div class="col-sm-5">
-              <select class="form-control form-control-md" id="inputDay" name="day">
-                <optgroup label="Choose Day">
-                  @foreach($timetables as $timetable)
-                    <option value="{{$timetable->id}}">{{$timetable->day}}</option>
-                  @endforeach
-                </optgroup>
-              </select>
+               <input type="text" class="form-control" id="inputDay" name="day">
               <span class="text-danger">{{ $errors->first('day') }}</span>
             </div>
           </div>
@@ -45,10 +39,26 @@
           </div>
 
 
+           <div class="form-group row {{ $errors->has('grade') ? 'has-error' : '' }}">
+            <label for="inputGrade" class="col-sm-2 col-form-label">Grade</label>
+            <div class="col-sm-5">
+              <select class="form-control form-control-md grade" id="inputGrade" name="grade">
+                <optgroup label="Choose Grde">
+                  @foreach($grades as $grade)
+                    <option value="{{$grade->id}}">{{$grade->name}}</option>
+                  @endforeach
+                </optgroup>
+              </select>
+              <span class="text-danger">{{ $errors->first('grade') }}</span>
+            </div>
+          </div>
+
+
+
           <div class="form-group row {{ $errors->has('class') ? 'has-error' : '' }}">
             <label for="inputClass" class="col-sm-2 col-form-label">Class</label>
             <div class="col-sm-5">
-              <select class="form-control form-control-md" id="inputClass" name="class">
+              <select class="form-control form-control-md stuclass" id="inputClass" name="class">
                 <optgroup label="Choose Class">
                    @foreach($classes as $class)
                     <option value="{{$class->id}}">{{$class->name}}</option>
@@ -60,11 +70,12 @@
           </div>
 
 
+
           
           <div class="form-group row {{ $errors->has('subject') ? 'has-error' : '' }}">
             <label for="inputSubject" class="col-sm-2 col-form-label">Subject</label>
             <div class="col-sm-5">
-              <select class="form-control form-control-md" id="inputSubject" name="subject">
+              <select class="form-control form-control-md subject" id="inputSubject" name="subject">
                 <optgroup label="Choose Grde">
                   @foreach($subjects as $subject)
                     <option value="{{$subject->id}}">{{$subject->name}}</option>
@@ -95,10 +106,10 @@
           <div class="form-group row {{ $errors->has('name') ? 'has-error' : '' }}">
             <label for="inputTeacher" class="col-sm-2 col-form-label">Teacher</label>
             <div class="col-sm-5">
-              <select class="form-control form-control-md" id="inputTeacher" name="name">
+              <select class="form-control form-control-md teasub" id="inputTeacher" name="name">
                 <optgroup label="Choose Teacher">
                   @foreach($teachers as $teacher)
-                    <option value="{{$teacher->id}}">{{$teacher->name}}</option>
+                    <option value="{{$teacher->id}}">{{$teacher->user->name}}</option>
                   @endforeach
                 </optgroup>
               </select>

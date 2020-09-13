@@ -10,4 +10,8 @@ class Subject extends Model
     	  'name'
 
     ];
+     public function timetable($value='')
+    {
+    	return $this->hasMany('App\Timetable');
+    }
 }

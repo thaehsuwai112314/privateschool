@@ -22,4 +22,9 @@ class Timetable extends Model
     {
     	return $this->hasMany('App\Teacher');
     }
+     public function subject($value='')
+    {
+        return $this->hasMany('App\Subject');
+    }
+    
 }

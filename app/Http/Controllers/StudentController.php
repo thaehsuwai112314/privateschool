@@ -160,7 +160,7 @@ class StudentController extends Controller
             $student->user_id=$id;
             $student->academic_id = $request->academic;
             $student->class_id=$request->class;
-            $student->subject_id=1;
+            $student->subject_id=7;
             $student->save();
 
             return redirect()->route('student.index');
@@ -176,5 +176,14 @@ class StudentController extends Controller
     {
         $student->delete();
         return redirect()->route('student.index');
+    }
+    public function studentgrade(Request $request)
+    {
+       $id=$request->notes;
+       //dd($id);
+       $class=Classes::where('grade_id',$id)->get();
+       //dd($class);
+       return $class;
+       
     }
 }

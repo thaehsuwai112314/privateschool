@@ -32,3 +32,6 @@ Route::resource('subject','SubjectController');
 Route::resource('class','ClassesController');
 Route::resource('timetable','TimetableController');
 Route::resource('grade','GradeController');
+Route::resource('examination','ExaminationController');
+Route::post('studentgrade','StudentController@studentgrade')->name('studentgrade');
+Route::post('teachersubject','TimetableController@teachersubject')->name('teachersubject');

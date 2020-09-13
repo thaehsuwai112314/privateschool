@@ -51,7 +51,32 @@ class TimetableController extends Controller
      */
     public function store(Request $request)
     {
-        //
+          $request->validate([
+            
+            "day" => 'required',
+            "starttime" => 'required',
+            "endtime" => 'required',
+            "class" => 'required',
+            "subject" => 'required',
+            "academic" => 'required',
+            "name" => 'required'
+           
+
+        ]);
+        
+            
+
+            $timetable = new Timetable;
+            $timetable->day = $request->day;
+            $timetable->starttime = $request->starttime;
+            $timetable->endtime = $request->endtime;
+            $timetable->class_id= $request->class;
+            $timetable->subject_id= $request->subject;
+            $timetable->academic_id= $request->academic;
+            $timetable->teacher_id= $request->name;
+            $timetable->save();
+        
+           return redirect()->route('timetable.index');
     }
 
     /**
@@ -62,7 +87,7 @@ class TimetableController extends Controller
      */
     public function show(Timetable $timetable)
     {
-        //
+         return view('backend.timetable.detail',compact('timetable'));
     }
 
     /**
@@ -73,7 +98,14 @@ class TimetableController extends Controller
      */
     public function edit(Timetable $timetable)
     {
-        //
+         $academics = Academic::all();
+        $classes = Classes::all();
+        $grades = Grade::all();
+        $subjects = Subject::all();
+        $timetables = Timetable::all();
+        $teachers = Teacher::all();
+
+        return view('backend.student.edit',compact('academics','classes','grades','subjects','student','timetables','teachers'));
     }
 
     /**
@@ -85,7 +117,23 @@ class TimetableController extends Controller
      */
     public function update(Request $request, Timetable $timetable)
     {
-        //
+       $request->validate([
+            
+            "day" => 'required',
+            "starttime" => 'required',
+            "endtime" => 'required',
+           
+
+        ]);
+        
+            
+
+            $timetable->day = $request->day;
+            $timetable->starttime = $request->starttime;
+            $timetable->endtime = $request->endtime;
+            $timetable->save();
+        
+           return redirect()->route('timetable.index');
     }
 
     /**
@@ -96,6 +144,16 @@ class TimetableController extends Controller
      */
     public function destroy(Timetable $timetable)
     {
-        //
+       $timetable->delete();
+        return redirect()->route('timetable.index');
+    }
+     public function teachersubject(Request $request)
+    {
+       $id=$request->subject;
+       //dd($id);
+       $teacher=Teacher::where('subject_id',$id)->get();
+       //dd($class);
+       return $teacher;
+       
     }
 }

@@ -38,7 +38,7 @@
               <td>{{$i++}}</td>
               <td>{{$subject->name}}</td>  
               <td>
-                 <a href="{{route('subject.show',$subject->id)}}" class="btn btn-primary"><i class="fas fa-info fa-2x"></i></a>
+                 {{-- <a href="{{route('subject.show',$subject->id)}}" class="btn btn-primary"><i class="fas fa-info fa-2x"></i></a> --}}
                 <a href="{{route('subject.edit',$subject->id)}}" class="btn btn-warning"><i class="fas fa-edit fa-2x"></i></a>
                             <form method="post" action="{{route('subject.destroy',$subject->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
                                 @csrf
