@@ -19,6 +19,28 @@
 
     <!-- Website Title -->
     <title>Evolo - StartUp HTML Landing Page Template</title>
+    <style type="text/css">
+        div.detail{
+    background: rgba(6,12,34,0.76);
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    bottom: 0px;
+}
+div.speaker{
+    position: relative;
+}
+    .loggo{
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    position: relative;
+}
+   .a{
+    font-family: Arial;
+   }
+    </style>
     
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,600,700,700i&amp;subset=latin-ext" rel="stylesheet">
@@ -47,10 +69,10 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
         <!-- Text Logo - Use this if you don't have a graphic logo -->
-        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Evolo</a> -->
+        <a class="navbar-brand logo-text page-scroll" href="index.html">  <img src="{{asset('frontend/images/imagess/edu4.png')}}" class="loggo">Matrix</a>
 
         <!-- Image Logo -->
-        <a class="navbar-brand logo-image" href="{{asset('frontend/index.blade.php')}}"><img src="{{asset('frontend/images/logo.svg')}}" alt="alternative"></a>
+        {{-- <a class="navbar-brand logo-image" href="{{asset('frontend/index.blade.php')}}"><img src="{{asset('frontend/images/logo.svg')}}" alt="alternative"></a> --}}
         
         <!-- Mobile Menu Toggle Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -86,7 +108,7 @@
                 <!-- end of dropdown menu -->
 
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#contact">Contact</a>
+                    <a class="nav-link page-scroll" href="{{route('contactpage')}}">Contact</a>
                 </li>
             </ul>
             <span class="nav-item social-icons">
@@ -111,22 +133,10 @@
     <!-- Header -->
     <header id="header" class="header">
         <div class="header-content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="text-container">
-                            <h1><span class="turquoise">StartUp Landing</span> Page Template Free</h1>
-                            <p class="p-large">Use Evolo free landing page template to promote your business startup and generate leads for the offered services</p>
-                            <a class="btn-solid-lg page-scroll" href="#services">DISCOVER</a>
-                        </div> <!-- end of text-container -->
-                    </div> <!-- end of col -->
-                    <div class="col-lg-6">
-                        <div class="image-container">
-                            <img class="img-fluid" src="{{asset('frontend/images/header-teamwork.svg')}}" alt="alternative">
-                        </div> <!-- end of image-container -->
-                    </div> <!-- end of col -->
-                </div> <!-- end of row -->
-            </div> <!-- end of container -->
+
+          
+
+           
         </div> <!-- end of header-content -->
     </header> <!-- end of header -->
     <!-- end of header -->
@@ -135,14 +145,64 @@
      @yield('content')
 
 
-   
+   <!-- Customers -->
+    <div class="slider-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h5>Trusted By</h5>
+                    
+                    <!-- Image Slider -->
+                    <div class="slider-container">
+                        <div class="swiper-container image-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="image-container">
+                                        <img class="img-responsive" src="{{asset('frontend/images/customer-logo-1.png')}}" alt="alternative">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="image-container">
+                                        <img class="img-responsive" src="{{asset('frontend/images/customer-logo-2.png')}}" alt="alternative">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="image-container">
+                                        <img class="img-responsive" src="{{asset('frontend/images/customer-logo-3.png')}}" alt="alternative">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="image-container">
+                                        <img class="img-responsive" src="{{asset('frontend/images/customer-logo-4.png')}}" alt="alternative">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="image-container">
+                                        <img class="img-responsive" src="{{asset('frontend/images/customer-logo-5.png')}}" alt="alternative">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="image-container">
+                                        <img class="img-responsive" src="{{asset('frontend/images/customer-logo-6.png')}}" alt="alternative">
+                                    </div>
+                                </div>
+                            </div> <!-- end of swiper-wrapper -->
+                        </div> <!-- end of swiper container -->
+                    </div> <!-- end of slider-container -->
+                    <!-- end of image slider -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of slider-1 -->
+    <!-- end of customers -->
     <!-- Footer -->
     <div class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
                     <div class="footer-col">
-                        <h4>About Evolo</h4>
+                        <h4>About Matrix</h4>
                         <p>We're passionate about offering some of the best business growth services for startups</p>
                     </div>
                 </div> <!-- end of col -->

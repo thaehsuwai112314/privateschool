@@ -4,11 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-<<<<<<< HEAD:app/Http/Controllers/FrontendpageController.php
+
 class FrontendpageController extends Controller
-=======
-class BackendController extends Controller
->>>>>>> 96ffe81e28877ea30b442453ae656969974b1deb:app/Http/Controllers/BackendController.php
+
 {
      /**
      * Display a listing of the resource.
@@ -17,12 +15,10 @@ class BackendController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD:app/Http/Controllers/FrontendpageController.php
+
         //return 'This is computer student page';
        return view('frontend.index');
-=======
-        return view('backendtemplate');
->>>>>>> 96ffe81e28877ea30b442453ae656969974b1deb:app/Http/Controllers/BackendController.php
+
     }
 
     /**
