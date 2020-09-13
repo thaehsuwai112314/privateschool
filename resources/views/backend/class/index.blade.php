@@ -40,7 +40,7 @@
               <td>{{$class->name}}</td>             
              
               <td>
-                 <a href="{{route('class.show',$class->id)}}" class="btn btn-primary"><i class="fas fa-info fa-2x"></i></a>
+                {{--  <a href="{{route('class.show',$class->id)}}" class="btn btn-primary"><i class="fas fa-info fa-2x"></i></a> --}}
                 <a href="{{route('class.edit',$class->id)}}" class="btn btn-warning"><i class="fas fa-edit fa-2x"></i></a>
                             <form method="post" action="{{route('class.destroy',$class->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
                                 @csrf

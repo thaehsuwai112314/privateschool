@@ -5,7 +5,7 @@
   <!-- Page Heading -->
   <div class="row mb-5">
     <div class="col-md-12">
-      <h1 class="h3 mb-0 text-gray-800 d-inline-block">Student Register Detail Page</h1>
+      <h1 class="h3 mb-0 text-gray-800 d-inline-block"><i class="fas fa-user-graduate"></i> Student Register Detail Page</h1>
     </div>
   </div>
 

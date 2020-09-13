@@ -5,7 +5,7 @@
   <!-- Page Heading -->
   <div class="row mb-5">
     <div class="col-md-12">
-      <h1 class="h3 mb-0 text-gray-800 d-inline-block">Subject Detail </h1>
+      <h1 class="h3 mb-0 text-gray-800 d-inline-block"> <i class="fas fa-book"></i> Subject Detail </h1>
     </div>
   </div>
 

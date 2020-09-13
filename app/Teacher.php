@@ -14,4 +14,8 @@ class Teacher extends Model
   {
   	return $this->belongsTo('App\User');
   }
+  public function Timetable($value='')
+  {
+  	return $this->belongsTo('App\Timetable');
+  }
 }

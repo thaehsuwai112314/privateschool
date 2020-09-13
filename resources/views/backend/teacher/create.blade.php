@@ -6,7 +6,7 @@
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <div class="row">
       <div class="col">
-        <h1 class="h3 mb-0 text-gray-800">Teacher Register</h1>
+        <h1 class="h3 mb-0 text-gray-800"><i class="fas fa-chalkboard-teacher"></i>Teacher Register</h1>
       </div>
     </div>
   </div>
@@ -28,13 +28,6 @@
             <div class="col-sm-5">
               <input type="email" class="form-control" id="inputEmail" name="email">
               <span class="text-danger">{{ $errors->first('email') }}</span>
-            </div>
-          </div>
-          <div class="form-group row {{ $errors->has('password') ? 'has-error' : '' }}">
-            <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-            <div class="col-sm-5">
-              <input type="password" class="form-control" id="inputPassword" name="password">
-              <span class="text-danger">{{ $errors->first('password') }}</span>
             </div>
           </div>
 

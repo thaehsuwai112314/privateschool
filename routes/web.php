@@ -20,9 +20,6 @@ Route::get('/', 'PageController@indexfun')->name('mainpage');
 
  Route::resource('student','StudentController');
 
-
-Route::get('contacts', 'PageController@contactfun')->name('contactpage');
-
 Route::get('contacts', 'PageController@contactfun')->name('contactpage');
 
 Route::get('logins', 'PageController@loginfun')->name('loginpage');
@@ -49,6 +46,12 @@ Route::resource('subject','SubjectController');
 Route::resource('class','ClassesController');
 Route::resource('timetable','TimetableController');
 Route::resource('grade','GradeController');
+
 Route::get('backends', 'backenddController@backenddfun');
 
 });
+
+Route::resource('examination','ExaminationController');
+Route::post('studentgrade','StudentController@studentgrade')->name('studentgrade');
+Route::post('teachersubject','TimetableController@teachersubject')->name('teachersubject');
+

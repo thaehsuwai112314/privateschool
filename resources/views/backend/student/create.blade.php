@@ -6,7 +6,7 @@
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <div class="row">
       <div class="col">
-        <h1 class="h3 mb-0 text-gray-800">Student Register</h1>
+        <h1 class="h3 mb-0 text-gray-800"><i class="fas fa-user-graduate"></i> Student Register</h1>
       </div>
     </div>
   </div>
@@ -97,7 +97,7 @@
           <div class="form-group row {{ $errors->has('grade') ? 'has-error' : '' }}">
             <label for="inputGrade" class="col-sm-2 col-form-label">Grade</label>
             <div class="col-sm-5">
-              <select class="form-control form-control-md" id="inputGrade" name="grade">
+              <select class="form-control form-control-md grade" id="inputGrade year" name="grade">
                 <optgroup label="Choose Grde">
                   @foreach($grades as $grade)
                     <option value="{{$grade->id}}">{{$grade->name}}</option>
@@ -113,7 +113,7 @@
           <div class="form-group row {{ $errors->has('class') ? 'has-error' : '' }}">
             <label for="inputClass" class="col-sm-2 col-form-label">Class</label>
             <div class="col-sm-5">
-              <select class="form-control form-control-md" id="inputClass" name="class">
+              <select class="form-control form-control-md stuclass" id="inputClass" name="class">
                 <optgroup label="Choose Class">
                    @foreach($classes as $class)
                     <option value="{{$class->id}}">{{$class->name}}</option>
@@ -123,7 +123,13 @@
               <span class="text-danger">{{ $errors->first('class') }}</span>
             </div>
           </div>
-
+         {{--  <section id="major">
+    <label>Major:</label>
+    <input type="radio" name="major" value="cs" id="cs" checked>
+    <label for="cs">Bio</label>
+    <input type="radio" name="major" value="ct" id="ct"  >
+    <label for="ct">Eco</label>
+    <br></section> --}}
           <div class="form-group row">
             <div class="col-sm-5">
               <input type="submit" class="btn btn-success" name="btnsubmit" value="Register">

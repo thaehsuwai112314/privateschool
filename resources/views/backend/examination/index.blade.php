@@ -7,15 +7,15 @@
       <div class="row">
         <div class="col-10">
             <h1 class="h3 mb-4 text-gray-800">
-    <i class="fas fa-chalkboard-teacher"></i> 
+    <i class="fas fa-book-open"></i> 
     Exam  List
   </h1>
          
         </div>
 
         <div class="col-2">
-          <a href="{{route('teacher.create')}}" class="btn btn-success btn-block float-right"> 
-            <i class="fa fa-plus"></i> New Register 
+          <a href="{{route('examination.create')}}" class="btn btn-success btn-block float-right"> 
+            <i class="fa fa-plus"></i> New Examonation 
           </a>
         </div>
       </div>
@@ -28,27 +28,21 @@
             <tr>
               <th>No</th>
               <th>Name</th>
-              <th>Photo</th>
-              <th>Address</th>
-              <th>Phone No</th>
-              <th>Salary</th>
+              <th>Result</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             @php $i=1; @endphp
-            @foreach($teachers as $teacher)
+            @foreach($examinations as $examination)
             <tr>
               <td>{{$i++}}</td>
-              <td>{{$teacher->user->name}}</td>             
-              <td> <img src="{{asset($teacher->photo)}}" width="120px" height="100px"></td>
-              <td>{{$teacher->address}}</td>
-              <td>{{$teacher->phoneno}}</td>
-              <td>{{$teacher->salary}}</td> 
+              <td>{{$examination->name}}</td>
+              <td>{{$examination->result}}</td>
               <td>
-                 <a href="{{route('teacher.show',$teacher->id)}}" class="btn btn-primary"><i class="fas fa-info fa-2x"></i></a>
-                <a href="{{route('teacher.edit',$teacher->id)}}" class="btn btn-warning"><i class="fas fa-edit fa-2x"></i></a>
-                            <form method="post" action="{{route('teacher.destroy',$teacher->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
+                 <a href="{{route('examination.show',$examination->id)}}" class="btn btn-primary"><i class="fas fa-info fa-2x"></i></a>
+                <a href="{{route('examination.edit',$examination->id)}}" class="btn btn-warning"><i class="fas fa-edit fa-2x"></i></a>
+                            <form method="post" action="{{route('examination.destroy',$examination->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
                                 @csrf
                                 @method('DELETE')
                                 <button  type="submit" class="btn btn-danger"><i class="fas fa-trash fa-2x"></i></button> 
