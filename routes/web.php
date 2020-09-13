@@ -21,10 +21,14 @@ Route::get('/', function () {
 
 Route::resource('backends','BackendController');
 
-Route::resource('students','StudentController');
+// Route::resource('students','StudentController');
 
 
 
 Route::resource('student','StudentController');//edit by Kai Zar Hein
 
-
+Route::resource('teacher','TeacherController');
+Route::resource('subject','SubjectController');
+Route::resource('class','ClassesController');
+Route::resource('timetable','TimetableController');
+Route::resource('grade','GradeController');

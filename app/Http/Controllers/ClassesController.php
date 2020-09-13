@@ -11,7 +11,8 @@ use App\Subject;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class SubjectController extends Controller
+
+class ClassesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,8 +21,8 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        $subjects = Student::all();
-         return view('backend.subject.index',compact('subjects'));
+        $classes = Classes::all();
+         return view('backend.class.index',compact('classes'));
     }
 
     /**
@@ -31,8 +32,9 @@ class SubjectController extends Controller
      */
     public function create()
     {
-        $subjects = Subject::all();
-        return view('backend.subject.create',compact('subjects'));
+        $classes = Classes::all();
+       
+        return view('backend.class.create',compact('classes'));
     }
 
     /**
@@ -43,81 +45,75 @@ class SubjectController extends Controller
      */
     public function store(Request $request)
     {
-         $request->validate([
+        $request->validate([
             
             "name" => 'required',
             
-
         ]);
         
 
-            $subject = new Subject;
-            $subject->name = $request->name;
-           
-            $subject->save();
+            $class = new Classes;
+            $class->name = $request->name;
+            
+            $class->save();
         
-           return redirect()->route('subject.index');
+           return redirect()->route('class.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Subject  $subject
+     * @param  \App\Classes  $classes
      * @return \Illuminate\Http\Response
      */
-    public function show(Subject $subject)
+    public function show(Classes $classes)
     {
-       return view('backend.subject.detail',compact('subject'));
+         return view('backend.class.detail',compact('classes'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Subject  $subject
+     * @param  \App\Classes  $classes
      * @return \Illuminate\Http\Response
      */
-    public function edit(Subject $subject)
+    public function edit(Classes $classes)
     {
        
-        $subjects = Subject::all();
-        return view('backend.subject.edit',compact('subjects'));
+        $classes = Classes::all();
+       
+        return view('backend.class.edit',compact('classes'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Subject  $subject
+     * @param  \App\Classes  $classes
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Subject $subject)
+    public function update(Request $request, Classes $classes)
     {
         $request->validate([
-            
             "name" => 'required',
-            
-
-        ]);
+             ]);
         
-
-            
-            $subject->name = $request->name;
+            $class->name = $request->name;
            
-            $subject->save();
-        
-           return redirect()->route('subject.index');
+            $class->save();
+
+            return redirect()->route('class.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Subject  $subject
+     * @param  \App\Classes  $classes
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Subject $subject)
+    public function destroy(Classes $classes)
     {
-        
-        $subject->delete();
-        return redirect()->route('subject.index');
+        $class->delete();
+        return redirect()->route('class.index');
     }
 }

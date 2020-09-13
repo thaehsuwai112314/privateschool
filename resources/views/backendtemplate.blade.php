@@ -41,7 +41,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="">
           <i class="fas fa-book-reader"></i>
           <span>Admin</span></a>
       </li>
@@ -54,44 +54,49 @@
         Interface
       </div>
 
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-user-graduate"></i>
-          <span>Student</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Student Detail:</h6>
-            <a class="collapse-item" href="{{route('student.index')}}">Student Register</a>
-            <a class="collapse-item" href="{{route('student.index')}}">Student Register Detail</a>
-          </div>
-        </div>
-      </li>
 
-       
+       <!-- Nav Item - Student -->
+      <li class="nav-item">
+        <a class="nav-link" href="{{route('student.index')}}">
+          <i class="fas fa-user-graduate"></i>
+          <span>Student</span></a>
+      </li>
 
        <!-- Nav Item - Teacher -->
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="{{route('teacher.index')}}">
           <i class="fas fa-chalkboard-teacher"></i>
           <span>Teacher</span></a>
       </li>
       
+      <!-- Nav Item - Subject -->
+      <li class="nav-item">
+        <a class="nav-link" href="{{route('subject.index')}}">
+          <i class="fas fa-book"></i>
+          <span>Subject</span></a>
+      </li>
 
       <!-- Nav Item - Class -->
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="{{route('class.index')}}">
           <i class="fas fa-university"></i>
           <span>Class</span></a>
       </li>
 
       <!-- Nav Item - TimeTable -->
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="{{route('timetable.index')}}">
           <i class="fas fa-fw fa-table"></i>
           <span>Timetable</span></a>
       </li>
+
+       <!-- Nav Item - Grade -->
+      <li class="nav-item">
+        <a class="nav-link" href="{{route('grade.index')}}">
+          <i class="fas fa-fw fa-angle-up"></i>
+          <span>Grade</span></a>
+      </li>
+
 
       
 

@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Subject extends Model
+class Academic extends Model
 {
      protected $fillable = [
-    	  'name'
+    	 'name'
 
     ];
 }

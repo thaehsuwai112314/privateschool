@@ -11,7 +11,8 @@ use App\Subject;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class SubjectController extends Controller
+
+class GradeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,8 +21,8 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        $subjects = Student::all();
-         return view('backend.subject.index',compact('subjects'));
+         $grades = Grade::all();
+         return view('backend.grade.index',compact('grades'));
     }
 
     /**
@@ -31,8 +32,9 @@ class SubjectController extends Controller
      */
     public function create()
     {
-        $subjects = Subject::all();
-        return view('backend.subject.create',compact('subjects'));
+       $grades = Grade::all();
+       
+        return view('backend.grade.create',compact('grades'));
     }
 
     /**
@@ -43,7 +45,7 @@ class SubjectController extends Controller
      */
     public function store(Request $request)
     {
-         $request->validate([
+        $request->validate([
             
             "name" => 'required',
             
@@ -51,46 +53,45 @@ class SubjectController extends Controller
         ]);
         
 
-            $subject = new Subject;
-            $subject->name = $request->name;
-           
-            $subject->save();
+            $grade = new Grade;
+            $grade->name = $request->name;
+            
+            $grade->save();
         
-           return redirect()->route('subject.index');
+           return redirect()->route('grade.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Subject  $subject
+     * @param  \App\Grade  $grade
      * @return \Illuminate\Http\Response
      */
-    public function show(Subject $subject)
+    public function show(Grade $grade)
     {
-       return view('backend.subject.detail',compact('subject'));
+         return view('backend.grade.detail',compact('grade'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Subject  $subject
+     * @param  \App\Grade  $grade
      * @return \Illuminate\Http\Response
      */
-    public function edit(Subject $subject)
+    public function edit(Grade $grade)
     {
-       
-        $subjects = Subject::all();
-        return view('backend.subject.edit',compact('subjects'));
+        $grades = Grade::all();
+        return view('backend.grade.edit',compact('grades'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Subject  $subject
+     * @param  \App\Grade  $grade
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Subject $subject)
+    public function update(Request $request, Grade $grade)
     {
         $request->validate([
             
@@ -100,24 +101,23 @@ class SubjectController extends Controller
         ]);
         
 
-            
-            $subject->name = $request->name;
            
-            $subject->save();
+            $grade->name = $request->name;
+            
+            $grade->save();
         
-           return redirect()->route('subject.index');
+           return redirect()->route('grade.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Subject  $subject
+     * @param  \App\Grade  $grade
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Subject $subject)
+    public function destroy(Grade $grade)
     {
-        
-        $subject->delete();
-        return redirect()->route('subject.index');
+        $grade->delete();
+        return redirect()->route('grade.index');
     }
 }
