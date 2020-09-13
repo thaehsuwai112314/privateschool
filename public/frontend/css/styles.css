@@ -44,6 +44,16 @@ Colors:
 /******************************/
 /*     01. General Styles     */
 /******************************/
+/*div.detail{
+	background: rgba(6,12,34,0.76);
+	position: absolute;
+	text-align: center;
+	color: #fff;
+	width: 100%;
+	bottom: 0px;
+}
+div.speaker{
+	position: relative;*/
 body,
 html {
     width: 100%;

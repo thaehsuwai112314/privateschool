@@ -13,25 +13,41 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
-    //return 'Hello Laravel';
-    //edit by Thae Hsu Wai
-});
 
-Route::resource('backends','BackendController');
+
+
+Route::get('/', 'PageController@indexfun')->name('mainpage');
 
 // Route::resource('students','StudentController');
 
 
+Route::get('contacts', 'PageController@contactfun')->name('contactpage');
 
-Route::resource('student','StudentController');//edit by Kai Zar Hein
+
+//Route::get('backends','PageController@backendfun');
+
+Route::resource('backends','Backend/BackendController');
+
+
+
+
+
+
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('teacher','TeacherController');
 Route::resource('subject','SubjectController');
 Route::resource('class','ClassesController');
 Route::resource('timetable','TimetableController');
 Route::resource('grade','GradeController');
+<<<<<<< HEAD
 Route::resource('examination','ExaminationController');
 Route::post('studentgrade','StudentController@studentgrade')->name('studentgrade');
 Route::post('teachersubject','TimetableController@teachersubject')->name('teachersubject');
+=======
+>>>>>>> 6ee6383bb9f40427dd5b217aba43c6cf03ca43c4

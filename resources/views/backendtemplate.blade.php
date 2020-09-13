@@ -316,7 +316,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright <i class="fas fa-fw fa-heart" style="color:red"></i> MMIT Student(PPZ/KZH/KKMH/THW)<i class="fas fa-fw fa-heart" style="color:red"></i></span>
+            <span>Designed By <i class="fas fa-fw fa-heart" style="color:red"></i> MMIT Student(PPZ/KZH/KKMH/THW)<i class="fas fa-fw fa-heart" style="color:red"></i></span>
           </div>
         </div>
       </footer>
