@@ -14,7 +14,7 @@
         </div>
 
         <div class="col-2">
-          <a href="{{route('teacher.create')}}" class="btn btn-success btn-block float-right"> 
+          <a href="{{route('class.create')}}" class="btn btn-success btn-block float-right"> 
             <i class="fa fa-plus"></i> New Class 
           </a>
         </div>
@@ -23,7 +23,7 @@
 
     <div class="row">
       <div class="col-md-8">
-        <table class="table table-bordered">
+        <table class="table table-bordered ml-3">
           <thead class="thead-dark">
             <tr>
               <th>No</th>

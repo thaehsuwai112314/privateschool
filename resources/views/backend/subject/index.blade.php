@@ -23,7 +23,7 @@
 
     <div class="row">
       <div class="col-md-6">
-        <table class="table table-bordered">
+        <table class="table table-bordered ml-3">
           <thead class="thead-dark">
             <tr>
               <th>No</th>

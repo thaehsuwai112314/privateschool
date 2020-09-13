@@ -18,15 +18,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PageController@indexfun')->name('mainpage');
 
-// Route::resource('students','StudentController');
+ Route::resource('student','StudentController');
 
 
 Route::get('contacts', 'PageController@contactfun')->name('contactpage');
 
+Route::get('contacts', 'PageController@contactfun')->name('contactpage');
 
-//Route::get('backends','PageController@backendfun');
+Route::get('logins', 'PageController@loginfun')->name('loginpage');
 
-Route::resource('backends','Backend/BackendController');
+
 
 
 
@@ -40,8 +41,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+Route::middleware('role:Admin')->group(function(){
+
 Route::resource('teacher','TeacherController');
 Route::resource('subject','SubjectController');
 Route::resource('class','ClassesController');
 Route::resource('timetable','TimetableController');
 Route::resource('grade','GradeController');
+Route::get('backends', 'backenddController@backenddfun');
+
+});

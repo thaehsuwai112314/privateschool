@@ -18,10 +18,10 @@
         </div>
       </div>
     </div>
-
+  
     <div class="row">
       <div class="col-md-12">
-        <table class="table table-bordered">
+        <table class="table table-bordered ml-3">
           <thead class="thead-dark">
             <tr>
               <th>Id</th>
@@ -64,6 +64,6 @@
         </table>
       </div>
     </div>
-
+  
   </div>
 @endsection
