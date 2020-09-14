@@ -24,9 +24,9 @@ Route::get('/', 'PageController@indexfun')->name('mainpage');
 Route::get('contacts', 'PageController@contactfun')->name('contactpage');
 
 
-//Route::get('backends','PageController@backendfun');
+Route::get('backends','PageController@backendfun');
 
-Route::resource('backends','Backend/BackendController');
+// Route::resource('backends','BackendController');
 
 
 
@@ -45,9 +45,12 @@ Route::resource('subject','SubjectController');
 Route::resource('class','ClassesController');
 Route::resource('timetable','TimetableController');
 Route::resource('grade','GradeController');
-<<<<<<< HEAD
+
 Route::resource('examination','ExaminationController');
 Route::post('studentgrade','StudentController@studentgrade')->name('studentgrade');
 Route::post('teachersubject','TimetableController@teachersubject')->name('teachersubject');
-=======
->>>>>>> 6ee6383bb9f40427dd5b217aba43c6cf03ca43c4
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
