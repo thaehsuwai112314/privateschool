@@ -153,7 +153,14 @@ class TimetableController extends Controller
        //dd($id);
        $teacher=Teacher::where('subject_id',$id)->get();
        //dd($class);
+
+       foreach($teacher as $user)
+       {
+        $name = $user->User->name;
+        //dd($name);
+          }
        return $teacher;
+
        
     }
 }

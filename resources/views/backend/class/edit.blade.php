@@ -14,11 +14,25 @@
       <div class="form-group row {{ $errors->has('name') ? 'has-error' : '' }}">
         <label for="inputName" class="col-sm-2 col-form-label">Name</label>
         <div class="col-sm-5">
-          <input type="text" class="form-control" id="inputName" name="name" value="{{$teacher->user->name}}">
+          <input type="text" class="form-control" id="inputName" name="name" value="{{$classes->name}}">
           <span class="text-danger">{{ $errors->first('name') }}</span>
         </div>
       </div>
-     
+
+       <div class="form-group row {{ $errors->has('grade') ? 'has-error' : '' }}">
+            <label for="inputGrade" class="col-sm-2 col-form-label">Grade</label>
+            <div class="col-sm-5">
+              <select class="form-control form-control-md" id="inputGrade" name="grade">
+                <optgroup label="Choose Grde">
+                 @foreach($grades as $row)
+                <option value="{{$row->id}}" @if($classes->grade_id == $row->id){{'selected'}} @endif>{{$row->name}}
+                </option>
+              @endforeach
+                </optgroup>
+              </select>
+              <span class="text-danger">{{ $errors->first('grade') }}</span>
+            </div>
+          </div>
         <div class="form-group row">
           <div >
             <input type="submit" class="btn btn-success form-control" id="submit" value="Update" name="btnsubmit">

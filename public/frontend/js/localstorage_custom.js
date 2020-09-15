@@ -4,6 +4,7 @@ $(document).ready(function(){
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
   });
+   $('.major').hide();
   $('.grade').on('change',function(){
     //alert('ok');
     var notes = $(this).val();
@@ -29,7 +30,7 @@ $(document).ready(function(){
         var html='';
         $.each(response,function(i,v){
           html+=`
-          <option value="${v.id}">${v.name}</option>
+          <option value="${v.id}">${v.user.name}</option>
           `;
         })
         $('.teasub').html(html);
@@ -39,13 +40,31 @@ $(document).ready(function(){
   
       // $('#major').hide(); 
 
-      // $('#year').change(function(){
-      //   let year = $(this).val();
-      //   if (year != 1) {
-      //     $('#major').show();
-      //   }else{
-      //     $('#major').hide();
+      $('.grade_name').change(function(){
 
-      //   }
-      // })
+        var grade_name=$('.grade_name option:selected').data('grade');
+        // alert(grade_name);
+         if (grade_name!="Grade-8") {
+          //  $.get('/grade_subject',function(ref){
+          //   var html='';
+            
+          //   $.each(ref,function(i,v){
+          //     console.log(v.name);
+          //     html+=`
+          //     <optgroup label="Choose Subject">
+          //         <option value="${v.id}">${v.name}</option>
+          //       </optgroup>`;
+          //   })
+          //  alert('wow');
+          // $('.major').show();
+
+          //   $('.grade_subjects').html(html);
+          // });
+          $('.major').show();
+        }else{
+         // alert('hi');
+          $('.major').hide();
+          
+         }
+      })
     })

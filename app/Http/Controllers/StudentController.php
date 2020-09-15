@@ -81,7 +81,7 @@ class StudentController extends Controller
             $student->user_id=$id;
             $student->academic_id = $request->academic;
             $student->class_id=$request->class;
-            $student->subject_id=7;
+            $student->subject_id=$request->subject;
             $student->save();
         
            return redirect()->route('student.index');
@@ -160,7 +160,7 @@ class StudentController extends Controller
             $student->user_id=$id;
             $student->academic_id = $request->academic;
             $student->class_id=$request->class;
-            $student->subject_id=7;
+            $student->subject_id=1;
             $student->save();
 
             return redirect()->route('student.index');
@@ -185,5 +185,10 @@ class StudentController extends Controller
        //dd($class);
        return $class;
        
+    }
+    public function grade_subject($value='')
+    {
+        $subjects=Subject::all();
+        return $subjects;
     }
 }

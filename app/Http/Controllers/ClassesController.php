@@ -33,8 +33,9 @@ class ClassesController extends Controller
     public function create()
     {
         $classes = Classes::all();
+        $grades= Grade::all();
        
-        return view('backend.class.create',compact('classes'));
+        return view('backend.class.create',compact('classes','grades'));
     }
 
     /**
@@ -48,13 +49,14 @@ class ClassesController extends Controller
         $request->validate([
             
             "name" => 'required',
+            "grade" => 'required'
             
         ]);
         
 
             $class = new Classes;
             $class->name = $request->name;
-            
+            $class->grade_id=$request->grade;
             $class->save();
         
            return redirect()->route('class.index');
@@ -77,12 +79,13 @@ class ClassesController extends Controller
      * @param  \App\Classes  $classes
      * @return \Illuminate\Http\Response
      */
-    public function edit(Classes $classes)
+    public function edit(Classes $classes,$id)
     {
        
-        $classes = Classes::all();
-       
-        return view('backend.class.edit',compact('classes'));
+        //dd($classes);
+        $classes=Classes::find($id);
+       $grades = Grade::all();
+        return view('backend.class.edit',compact('classes','grades'));
     }
 
     /**
@@ -92,15 +95,16 @@ class ClassesController extends Controller
      * @param  \App\Classes  $classes
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Classes $classes)
+    public function update(Request $request, Classes $classes,$id)
     {
+
         $request->validate([
             "name" => 'required',
              ]);
-        
-            $class->name = $request->name;
-           
-            $class->save();
+        $classes=Classes::find($id);
+            $classes->name = $request->name;
+            $classes->grade_id=$request->grade;
+            $classes->save();
 
             return redirect()->route('class.index');
     }
@@ -111,9 +115,10 @@ class ClassesController extends Controller
      * @param  \App\Classes  $classes
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Classes $classes)
+    public function destroy(Classes $classes,$id)
     {
-        $class->delete();
+        $classes=Classes::find($id);
+        $classes->delete();
         return redirect()->route('class.index');
     }
 }

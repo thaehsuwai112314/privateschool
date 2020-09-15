@@ -14,7 +14,8 @@ class AcademicController extends Controller
      */
     public function index()
     {
-        //
+          $academics = Academic::all();
+         return view('backend.academic.index',compact('academics'));
     }
 
     /**
@@ -24,7 +25,9 @@ class AcademicController extends Controller
      */
     public function create()
     {
-        //
+      $academics = Academic::all();
+       
+        return view('backend.academic.create',compact('academics'));
     }
 
     /**
@@ -35,7 +38,19 @@ class AcademicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            
+            "name" => 'required',
+            
+        ]);
+        
+
+            $academic = new Academic;
+            $academic->name = $request->name;
+            
+            $academic->save();
+        
+           return redirect()->route('academic.index');
     }
 
     /**
@@ -46,7 +61,7 @@ class AcademicController extends Controller
      */
     public function show(Academic $academic)
     {
-        //
+            return view('backend.academic.detail',compact('academic'));
     }
 
     /**
@@ -57,7 +72,10 @@ class AcademicController extends Controller
      */
     public function edit(Academic $academic)
     {
-        //
+         
+        $academics = Academic::all();
+       
+        return view('backend.academic.edit',compact('academics'));
     }
 
     /**
@@ -69,7 +87,19 @@ class AcademicController extends Controller
      */
     public function update(Request $request, Academic $academic)
     {
-        //
+        $request->validate([
+            
+            "name" => 'required',
+            
+        ]);
+        
+
+            
+            $academic->name = $request->name;
+            
+            $academic->save();
+        
+           return redirect()->route('academic.index');
     }
 
     /**
@@ -80,6 +110,7 @@ class AcademicController extends Controller
      */
     public function destroy(Academic $academic)
     {
-        //
+         $academic->delete();
+        return redirect()->route('academic.index');
     }
 }

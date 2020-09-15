@@ -23,7 +23,19 @@
               <span class="text-danger">{{ $errors->first('name') }}</span>
             </div>
           </div>
-         
+         <div class="form-group row {{ $errors->has('grade') ? 'has-error' : '' }}">
+            <label for="inputGrade" class="col-sm-2 col-form-label">Grade</label>
+            <div class="col-sm-5">
+              <select class="form-control form-control-md grade" id="inputGrade year" name="grade">
+                <optgroup label="Choose Grde">
+                  @foreach($grades as $grade)
+                    <option value="{{$grade->id}}">{{$grade->name}}</option>
+                  @endforeach
+                </optgroup>
+              </select>
+              <span class="text-danger">{{ $errors->first('grade') }}</span>
+            </div>
+          </div>
           <div class="form-group row">
             <div class="col-sm-5">
               <input type="submit" class="btn btn-success" name="btnsubmit" value="Register">

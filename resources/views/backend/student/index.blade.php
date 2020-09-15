@@ -18,10 +18,10 @@
         </div>
       </div>
     </div>
-
+  
     <div class="row">
       <div class="col-md-12">
-        <table class="table table-bordered">
+        <table class="table table-bordered ml-3">
           <thead class="thead-dark">
             <tr>
               <th>Id</th>
@@ -50,12 +50,12 @@
                <td>{{$student->class->grade->name}}</td>
               <td>{{$student->class->name}}</td>
               <td>
-                 <a href="{{route('student.show',$student->id)}}" class="btn btn-primary"><i class="fas fa-info fa-2x"></i></a>
-                <a href="{{route('student.edit',$student->id)}}" class="btn btn-warning"><i class="fas fa-edit fa-2x"></i></a>
+                 <a href="{{route('student.show',$student->id)}}" class="btn btn-primary"><i class="fas fa-info fa-1x"></i></a>
+                <a href="{{route('student.edit',$student->id)}}" class="btn btn-warning"><i class="fas fa-edit fa-1x"></i></a>
                             <form method="post" action="{{route('student.destroy',$student->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
                                 @csrf
                                 @method('DELETE')
-                                <button  type="submit" class="btn btn-danger"><i class="fas fa-trash fa-2x"></i></button> 
+                                <button  type="submit" class="btn btn-danger"><i class="fas fa-trash fa-1x"></i></button> 
                             </form>
               </td>
             </tr>
@@ -64,6 +64,6 @@
         </table>
       </div>
     </div>
-
+  
   </div>
 @endsection

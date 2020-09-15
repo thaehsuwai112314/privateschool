@@ -13,10 +13,11 @@ class PageController extends Controller
     public function contactfun($value=''){
     	return view('frontend.contact_us');
     }
-       
-       public function backendfun(){
-    	return view('backendtemplate');
-    }
 
+    public function loginfun($value=''){
+    	return view('frontend.login');
+    }
+       
+    
        
 }

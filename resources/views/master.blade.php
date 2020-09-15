@@ -107,7 +107,7 @@
     </nav> <!-- end of navbar -->
     <!-- end of navigation -->
 
-
+{{-- 
     <!-- Header -->
     <header id="header" class="header">
         <div class="header-content">
@@ -130,7 +130,7 @@
         </div> <!-- end of header-content -->
     </header> <!-- end of header -->
     <!-- end of header -->
-
+ --}}
 
      @yield('content')
 

@@ -14,4 +14,8 @@ class Subject extends Model
     {
     	return $this->hasMany('App\Timetable');
     }
+     public function teacher($value='')
+    {
+    	return $this->belongsTo('App\Teacher');
+    }
 }

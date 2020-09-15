@@ -71,6 +71,19 @@
               <span class="text-danger">{{ $errors->first('salary') }}</span>
             </div>
           </div>
+          <div class="form-group row {{ $errors->has('subject') ? 'has-error' : '' }}">
+            <label for="inputTeacher" class="col-sm-2 col-form-label">Subject</label>
+            <div class="col-sm-5">
+              <select class="form-control form-control-md teasub" id="inputTeacher" name="subject">
+                <optgroup label="Choose Subject">
+                  @foreach($subjects as $subject)
+                    <option value="{{$subject->id}}">{{$subject->name}}</option>
+                  @endforeach
+                </optgroup>
+              </select>
+              <span class="text-danger">{{ $errors->first('name') }}</span>
+            </div>
+          </div>
           <div class="form-group row">
             <div class="col-sm-5">
               <input type="submit" class="btn btn-success" name="btnsubmit" value="Register">

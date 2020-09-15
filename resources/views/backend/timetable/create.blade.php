@@ -76,7 +76,7 @@
             <label for="inputSubject" class="col-sm-2 col-form-label">Subject</label>
             <div class="col-sm-5">
               <select class="form-control form-control-md subject" id="inputSubject" name="subject">
-                <optgroup label="Choose Grde">
+                <optgroup label="Choose Subject">
                   @foreach($subjects as $subject)
                     <option value="{{$subject->id}}">{{$subject->name}}</option>
                   @endforeach

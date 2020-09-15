@@ -74,13 +74,7 @@
               <span class="text-danger">{{ $errors->first('father_nrc') }}</span>
             </div>
           </div>
-         {{--  <div class="form-group row {{ $errors->has('payment') ? 'has-error' : '' }}">
-            <label for="inputPayment" class="col-sm-2 col-form-label">Payment</label>
-            <div class="col-sm-5">
-              <input type="number" class="form-control" id="inputDiscount" name="payment" value="100000">
-              <span class="text-danger">{{ $errors->first('payment') }}</span>
-            </div>
-          </div> --}}
+
           <div class="form-group row {{ $errors->has('academic') ? 'has-error' : '' }}">
             <label for="inputAcademic" class="col-sm-2 col-form-label">Academic</label>
             <div class="col-sm-5">
@@ -97,20 +91,28 @@
           <div class="form-group row {{ $errors->has('grade') ? 'has-error' : '' }}">
             <label for="inputGrade" class="col-sm-2 col-form-label">Grade</label>
             <div class="col-sm-5">
-              <select class="form-control form-control-md grade" id="inputGrade year" name="grade">
-                <optgroup label="Choose Grde">
+              <select class="form-control form-control-md grade_name"  id="inputGrade year" name="grade">
+                <optgroup label="Choose Grade" class="grade_option">
                   @foreach($grades as $grade)
-                    <option value="{{$grade->id}}">{{$grade->name}}</option>
+                    <option data-grade="{{$grade->name}}"  value="{{$grade->id}}">{{$grade->name}}</option>
                   @endforeach
                 </optgroup>
               </select>
               <span class="text-danger">{{ $errors->first('grade') }}</span>
             </div>
           </div>
-
-
-
-          <div class="form-group row {{ $errors->has('class') ? 'has-error' : '' }}">
+          <div class="major form-group row {{ $errors->has('name') ? 'has-error' : '' }}">
+            <label for="subject" class="col-sm-2 col-form-label "> Subject Name</label>
+            <div class="col-sm-5">
+              <select class="form-control form-control-md stuclass grade_subjects " id="subject" name="subject">
+                 @foreach($subjects as $subject)
+                    <option   value="{{$subject->id}}">{{$subject->name}}</option>
+                  @endforeach
+              </select> 
+              <span class="text-danger">{{ $errors->first('subject') }}</span>
+            </div>
+          </div>
+       <div class="form-group row {{ $errors->has('class') ? 'has-error' : '' }}">
             <label for="inputClass" class="col-sm-2 col-form-label">Class</label>
             <div class="col-sm-5">
               <select class="form-control form-control-md stuclass" id="inputClass" name="class">
@@ -123,13 +125,6 @@
               <span class="text-danger">{{ $errors->first('class') }}</span>
             </div>
           </div>
-         {{--  <section id="major">
-    <label>Major:</label>
-    <input type="radio" name="major" value="cs" id="cs" checked>
-    <label for="cs">Bio</label>
-    <input type="radio" name="major" value="ct" id="ct"  >
-    <label for="ct">Eco</label>
-    <br></section> --}}
           <div class="form-group row">
             <div class="col-sm-5">
               <input type="submit" class="btn btn-success" name="btnsubmit" value="Register">
@@ -140,4 +135,5 @@
     </div>
   </div>
 </div>
+
 @endsection

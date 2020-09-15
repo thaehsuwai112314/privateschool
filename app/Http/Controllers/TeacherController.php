@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\User;
 use App\Teacher;
+use App\Subject;
 
 class TeacherController extends Controller
 {
@@ -26,7 +27,8 @@ class TeacherController extends Controller
      */
     public function create()
     {
-       return view('backend.teacher.create');
+        $subjects = Subject::all();
+       return view('backend.teacher.create',compact('subjects'));
     }
 
     /**
@@ -59,7 +61,7 @@ class TeacherController extends Controller
         $teacher->phoneno=request('phoneno');
         $teacher->salary=request('salary');
         $teacher->user_id=$id;
-        $teacher->subject_id=7;
+        $teacher->subject_id=$request->subject;
         $teacher->save();
         return redirect()->route('teacher.index');
 

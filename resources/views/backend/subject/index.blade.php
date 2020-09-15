@@ -23,7 +23,7 @@
 
     <div class="row">
       <div class="col-md-6">
-        <table class="table table-bordered">
+        <table class="table table-bordered ml-3">
           <thead class="thead-dark">
             <tr>
               <th>No</th>
@@ -39,11 +39,11 @@
               <td>{{$subject->name}}</td>  
               <td>
                  {{-- <a href="{{route('subject.show',$subject->id)}}" class="btn btn-primary"><i class="fas fa-info fa-2x"></i></a> --}}
-                <a href="{{route('subject.edit',$subject->id)}}" class="btn btn-warning"><i class="fas fa-edit fa-2x"></i></a>
+                <a href="{{route('subject.edit',$subject->id)}}" class="btn btn-warning"><i class="fas fa-edit fa-1x"></i></a>
                             <form method="post" action="{{route('subject.destroy',$subject->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
                                 @csrf
                                 @method('DELETE')
-                                <button  type="submit" class="btn btn-danger"><i class="fas fa-trash fa-2x"></i></button> 
+                                <button  type="submit" class="btn btn-danger"><i class="fas fa-trash fa-1x"></i></button> 
                             </form>
               </td>
             </tr>

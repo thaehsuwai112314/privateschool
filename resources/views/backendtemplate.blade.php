@@ -84,18 +84,27 @@
           <span>Class</span></a>
       </li>
 
-      <!-- Nav Item - TimeTable -->
-      <li class="nav-item">
-        <a class="nav-link" href="{{route('timetable.index')}}">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Timetable</span></a>
-      </li>
+     
 
        <!-- Nav Item - Grade -->
       <li class="nav-item">
         <a class="nav-link" href="{{route('grade.index')}}">
           <i class="fas fa-fw fa-marker"></i>
           <span>Grade</span></a>
+      </li>
+
+       <!-- Nav Item - TimeTable -->
+      <li class="nav-item">
+        <a class="nav-link" href="{{route('timetable.index')}}">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Timetable</span></a>
+      </li>
+
+       <!-- Nav Item - Academic -->
+      <li class="nav-item">
+        <a class="nav-link" href="{{route('academic.index')}}">
+          <i class="fas fa-fw fa-calendar"></i>
+          <span>Academic</span></a>
       </li>
 
        <!-- Nav Item - Grade -->

@@ -8,6 +8,7 @@ use App\Academic;
 use App\Classes;
 use App\Grade;
 use App\Subject;
+use App\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -32,7 +33,8 @@ class SubjectController extends Controller
     public function create()
     {
         $subjects = Subject::all();
-        return view('backend.subject.create',compact('subjects'));
+        $teachers = Teacher::all();
+        return view('backend.subject.create',compact('subjects','teachers'));
     }
 
     /**
@@ -45,14 +47,14 @@ class SubjectController extends Controller
     {
          $request->validate([
             
-            "name" => 'required',
+            "sname" => 'required',
             
 
         ]);
         
 
             $subject = new Subject;
-            $subject->name = $request->name;
+            $subject->name = $request->sname;
            
             $subject->save();
         
@@ -79,8 +81,7 @@ class SubjectController extends Controller
     public function edit(Subject $subject)
     {
        
-        $subjects = Subject::all();
-        return view('backend.subject.edit',compact('subjects'));
+        return view('backend.subject.edit',compact('subject'));
     }
 
     /**
@@ -94,14 +95,14 @@ class SubjectController extends Controller
     {
         $request->validate([
             
-            "name" => 'required',
+            "sname" => 'required',
             
 
         ]);
         
 
             
-            $subject->name = $request->name;
+            $subject->name = $request->sname;
            
             $subject->save();
         

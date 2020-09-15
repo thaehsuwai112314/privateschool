@@ -39,7 +39,8 @@ div.speaker{
 }
    .a{
     font-family: Arial;
-   }
+    }
+    
     </style>
     
     <!-- Styles -->
@@ -84,7 +85,7 @@ div.speaker{
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#header">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link page-scroll" href="{{route('mainpage')}}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#services">Services</a>
@@ -109,6 +110,9 @@ div.speaker{
 
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="{{route('contactpage')}}">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="{{route('loginpage')}}">Login</a>
                 </li>
             </ul>
             <span class="nav-item social-icons">
