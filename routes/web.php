@@ -18,23 +18,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PageController@indexfun')->name('mainpage');
 
- Route::resource('student','StudentController');
+Route::resource('student','StudentController');
 
 Route::get('contacts', 'PageController@contactfun')->name('contactpage');
 
 Route::get('logins', 'PageController@loginfun')->name('loginpage');
-
-
-Route::get('backends','PageController@backendfun');
-
-// Route::resource('backends','BackendController');
-
-
-
-
-
-
-
 
 
 
@@ -51,14 +39,15 @@ Route::resource('class','ClassesController');
 Route::resource('timetable','TimetableController');
 Route::resource('grade','GradeController');
 Route::resource('academic','AcademicController');
-
-
+Route::resource('examination','ExaminationController');
 Route::get('backends', 'backenddController@backenddfun');
 
 });
 
 
-Route::resource('examination','ExaminationController');
+
+
+
 Route::post('studentgrade','StudentController@studentgrade')->name('studentgrade');
 Route::post('teachersubject','TimetableController@teachersubject')->name('teachersubject');
 

@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Teacher;
 use App\Subject;
+use App\Role;
 
 class TeacherController extends Controller
 {
+
+    
     /**
      * Display a listing of the resource.
      *
@@ -63,6 +67,7 @@ class TeacherController extends Controller
         $teacher->user_id=$id;
         $teacher->subject_id=$request->subject;
         $teacher->save();
+        $user->assignRole('Teacher');
         return redirect()->route('teacher.index');
 
     }

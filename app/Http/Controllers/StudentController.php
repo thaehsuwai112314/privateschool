@@ -83,6 +83,7 @@ class StudentController extends Controller
             $student->class_id=$request->class;
             $student->subject_id=$request->subject;
             $student->save();
+            $user->assignRole('Student');
         
            return redirect()->route('student.index');
     }
