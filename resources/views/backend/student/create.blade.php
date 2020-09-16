@@ -91,7 +91,7 @@
           <div class="form-group row {{ $errors->has('grade') ? 'has-error' : '' }}">
             <label for="inputGrade" class="col-sm-2 col-form-label">Grade</label>
             <div class="col-sm-5">
-              <select class="form-control form-control-md grade_name"  id="inputGrade year" name="grade">
+              <select class="form-control form-control-md grade grade_name"  id="inputGrade year" name="grade">
                 <optgroup label="Choose Grade" class="grade_option">
                   @foreach($grades as $grade)
                     <option data-grade="{{$grade->name}}"  value="{{$grade->id}}">{{$grade->name}}</option>
@@ -104,7 +104,7 @@
           <div class="major form-group row {{ $errors->has('name') ? 'has-error' : '' }}">
             <label for="subject" class="col-sm-2 col-form-label "> Subject Name</label>
             <div class="col-sm-5">
-              <select class="form-control form-control-md stuclass grade_subjects " id="subject" name="subject">
+              <select class="form-control form-control-md subject grade_subjects " id="subject" name="subject">
                  @foreach($subjects as $subject)
                     <option   value="{{$subject->id}}">{{$subject->name}}</option>
                   @endforeach

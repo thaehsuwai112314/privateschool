@@ -23,9 +23,13 @@
           <div >
             <input type="submit" class="btn btn-success form-control" id="submit" value="Update" name="btnsubmit">
           </div>
+          <div class="col-3">
+        <a href="{{route('academic.index')}}" class="btn btn-success btn-block float-right"> 
+          <i class="fas fa-backward pr-2"></i>  Back 
+        </a>
+      </div>
         </div>
       </form>
         </div>
     </div>
-  </div>
   @endsection

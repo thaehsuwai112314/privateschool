@@ -21,6 +21,8 @@
         <p>StartTime : {{$timetable->starttime}}</p>
         <p>EndTime : {{$timetable->endtime}} </p>
         <p>Class : {{$timetable->class->name}} </p>
+       {{--  <p>Grade : {{$timetable->grade->name}} </p> --}}
+
       {{--   <p>Subject  : {{$timetable->subject->name}}</p> --}}
         <p>Academic :{{$timetable->academic->name}}</p>
   <div class="col-3">

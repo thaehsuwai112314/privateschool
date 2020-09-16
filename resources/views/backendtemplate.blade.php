@@ -42,7 +42,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="http://127.0.0.1:8000/backends">
           <i class="fas fa-book-reader"></i>
           <span>Admin</span></a>
       </li>
@@ -107,13 +107,28 @@
           <span>Academic</span></a>
       </li>
 
-       <!-- Nav Item - Grade -->
+        <!-- Nav Item - Payment -->
       <li class="nav-item">
-        <a class="nav-link" href="{{route('examination.index')}}">
-          <i class="fas fa-fw fa-book-open"></i>
-          <span>Examination</span></a>
+        <a class="nav-link" href="{{route('payment.index')}}">
+          <i class="fas fa-credit-card"></i>
+          <span>Payment</span></a>
       </li>
 
+
+       <!-- Nav Item - Exam -->
+      <li class="nav-item">
+        <a class="nav-link" href="">
+          <i class="fas fa-fw fa-book-open"></i>
+          <span>Exam</span></a>
+      </li>
+
+
+       <!-- Nav Item - Result -->
+      <li class="nav-item">
+        <a class="nav-link" href="">
+          <i class="fas fa-fw fa-book-open"></i>
+          <span>Result</span></a>
+      </li>
 
       
 
@@ -378,6 +393,8 @@
   <script src="{{ asset('backendCss/js/demo/chart-area-demo.js') }}"></script>
   <script src="{{ asset('backendCss/js/demo/chart-pie-demo.js') }}"></script>
   <script src="{{ asset('frontend/js/localstorage_custom.js') }}"></script>
+  @yield('script')
+
 </body>
 
 </html>

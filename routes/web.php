@@ -51,6 +51,7 @@ Route::resource('class','ClassesController');
 Route::resource('timetable','TimetableController');
 Route::resource('grade','GradeController');
 Route::resource('academic','AcademicController');
+Route::resource('payment','PaymentController');
 
 
 Route::get('backends', 'backenddController@backenddfun');
@@ -61,6 +62,8 @@ Route::get('backends', 'backenddController@backenddfun');
 Route::resource('examination','ExaminationController');
 Route::post('studentgrade','StudentController@studentgrade')->name('studentgrade');
 Route::post('teachersubject','TimetableController@teachersubject')->name('teachersubject');
+Route::post('timetableclass','TimetableController@timetableclass')->name('timetableclass');
+Route::post('paymentgrade','PaymentController@paymentgrade')->name('paymentgrade');
 
 
 

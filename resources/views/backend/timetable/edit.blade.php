@@ -7,7 +7,7 @@
     </h1>
   </div>
   <div class="container">
-    <form action="{{route('timetable.update',$timetables->id)}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('timetable.update',$timetable->id)}}" method="post" enctype="multipart/form-data">
       @csrf
       @method('PUT')
    {{--    <input type="hidden" name="user_id" value="{{$teacher->user_id}}"> --}}
@@ -40,7 +40,7 @@
               <select class="form-control form-control-md" id="inputGrade" name="grade">
                 <optgroup label="Choose Grde">
                  @foreach($grades as $row)
-                <option value="{{$row->id}}" @if($student->class->grade_id == $row->id){{'selected'}} @endif>{{$row->name}}
+                <option value="{{$row->id}}" @if($timetable->class->grade_id == $row->id){{'selected'}} @endif>{{$row->name}}
                 </option>
               @endforeach
                 </optgroup>
@@ -56,7 +56,7 @@
               <select class="form-control form-control-md" id="inputClass" name="class">
                 <optgroup label="Choose Class">
                     @foreach($classes as $row)
-                <option value="{{$row->id}}" @if($student->class_id == $row->id){{'selected'}} @endif>{{$row->name}}
+                <option value="{{$row->id}}" @if($timetable->class_id == $row->id){{'selected'}} @endif>{{$row->name}}
                 </option>
               @endforeach
                 </optgroup>
@@ -72,9 +72,9 @@
             <label for="inputSubject" class="col-sm-2 col-form-label">Subject</label>
             <div class="col-sm-5">
               <select class="form-control form-control-md subject" id="inputSubject" name="subject">
-                <optgroup label="Choose Grde">
+                <optgroup label="Choose Subject">
                    @foreach($subjects as $row)
-                <option value="{{$row->id}}" @if($subjects->id == $row->id){{'selected'}} @endif>{{$row->name}}
+                <option value="{{$row->id}}" @if($timetable->subject_id == $row->id){{'selected'}} @endif>{{$row->name}}
                 </option>
               @endforeach
                 </optgroup>
@@ -90,7 +90,7 @@
               <select class="form-control form-control-md" id="inputAcademic" name="academic">
                 <optgroup label="Choose Academic">
                    @foreach($academics as $row)
-                <option value="{{$row->id}}" @if($academics->id == $row->id){{'selected'}} @endif>{{$row->name}}
+                <option value="{{$row->id}}" @if($timetable->academic_id == $row->id){{'selected'}} @endif>{{$row->name}}
                 </option>
               @endforeach
                 </optgroup>
@@ -107,7 +107,7 @@
               <select class="form-control form-control-md teasub" id="inputTeacher" name="name">
                 <optgroup label="Choose Teacher">
                   @foreach($teachers as $row)
-                <option value="{{$row->id}}" @if($teachers->user->id == $row->id){{'selected'}} @endif>{{$row->name}}
+                <option value="{{$row->id}}" @if($timetable->teacher_id == $row->id){{'selected'}} @endif>{{$row->user->name}}
                 </option>
               @endforeach
                 </optgroup>
@@ -120,9 +120,14 @@
           <div >
             <input type="submit" class="btn btn-success form-control" id="submit" value="Update" name="btnsubmit">
           </div>
+          <div class="col-3">
+        <a href="{{route('timetable.index')}}" class="btn btn-success btn-block float-right"> 
+          <i class="fas fa-backward pr-2"></i>  Back 
+        </a>
+      </div>
         </div>
       </form>
         </div>
     </div>
-  </div>
+ 
   @endsection

@@ -80,8 +80,8 @@ class GradeController extends Controller
      */
     public function edit(Grade $grade)
     {
-        $grades = Grade::all();
-        return view('backend.grade.edit',compact('grades'));
+      
+        return view('backend.grade.edit',compact('grade'));
     }
 
     /**
