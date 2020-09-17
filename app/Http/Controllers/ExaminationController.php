@@ -36,7 +36,7 @@ class ExaminationController extends Controller
         $examinations = Examination::all();
         $subjects = Subject::all();
         $grades=Grade::all();
-        $academics=Grade::all();
+        $academics=Academic::all();
         return view('backend.examination.create',compact('students','examinations','subjects','grades','academics'));
     }
 

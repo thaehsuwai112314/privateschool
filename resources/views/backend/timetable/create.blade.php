@@ -19,22 +19,28 @@
           <div class="form-group row {{ $errors->has('day') ? 'has-error' : '' }}">
             <label for="inputDay" class="col-sm-2 col-form-label">Day</label>
             <div class="col-sm-5">
-               <input type="text" class="form-control" id="inputDay" name="day">
+              <select class="form-control form-control-md" id="inputDay" name="day">
+                <optgroup label="Choose Day">
+                  @foreach($days as $day)
+                    <option value="{{$day->id}}">{{$day->name}}</option>
+                  @endforeach
+                </optgroup>
+              </select>
               <span class="text-danger">{{ $errors->first('day') }}</span>
             </div>
           </div>
-          <div class="form-group row {{ $errors->has('starttime') ? 'has-error' : '' }}">
-            <label for="inputStarttime" class="col-sm-2 col-form-label">StartTime</label>
+         
+          <div class="form-group row {{ $errors->has('time') ? 'has-error' : '' }}">
+            <label for="inputTime" class="col-sm-2 col-form-label">Time</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputStarttime" name="starttime">
-              <span class="text-danger">{{ $errors->first('starttime') }}</span>
-            </div>
-          </div>
-          <div class="form-group row {{ $errors->has('endtime') ? 'has-error' : '' }}">
-            <label for="inputEndtime" class="col-sm-2 col-form-label">EndTime</label>
-            <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputEndtime" name="endtime">
-              <span class="text-danger">{{ $errors->first('endtime') }}</span>
+              <select class="form-control form-control-md " id="inputTime" name="time">
+                <optgroup label="Choose Grde">
+                  @foreach($times as $time)
+                    <option value="{{$time->id}}">{{$time->name}}</option>
+                  @endforeach
+                </optgroup>
+              </select>
+              <span class="text-danger">{{ $errors->first('time') }}</span>
             </div>
           </div>
 

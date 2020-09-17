@@ -10,6 +10,8 @@ use App\Grade;
 use App\Subject;
 use App\Timetable;
 use App\Teacher;
+use App\Day;
+use App\Time;
 use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -44,7 +46,9 @@ class TimetableController extends Controller
         $subjects = Subject::all();
          $timetables = Timetable::all();
          $teachers = Teacher::all();
-        return view('backend.timetable.create',compact('timetables','academics','classes','grades','subjects','teachers'));
+         $days= Day::all();
+         $times = Time::all();
+        return view('backend.timetable.create',compact('timetables','academics','classes','grades','subjects','teachers','days','times'));
     }
       
     /**
@@ -58,8 +62,8 @@ class TimetableController extends Controller
           $request->validate([
             
             "day" => 'required',
-            "starttime" => 'required',
-            "endtime" => 'required',
+            "time" => 'required',
+            "grade" => 'required',
             "class" => 'required',
             "subject" => 'required',
             "academic" => 'required',
@@ -71,9 +75,8 @@ class TimetableController extends Controller
             
 
             $timetable = new Timetable;
-            $timetable->day = $request->day;
-            $timetable->starttime = $request->starttime;
-            $timetable->endtime = $request->endtime;
+            $timetable->day_id = $request->day;
+            $timetable->time_id = $request->time;
             $timetable->class_id= $request->class;
             $timetable->subject_id= $request->subject;
             $timetable->academic_id= $request->academic;

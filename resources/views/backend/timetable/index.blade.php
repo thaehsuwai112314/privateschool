@@ -76,9 +76,9 @@
           <thead class="thead-dark">
             <tr>
               <th>No</th>
-              <th>Day</th>
-              <th>StartTime</th>
-              <th>EndTime</th>
+              <th>Grade</th>
+              <th>Class</th>
+              <th>Academic</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -87,10 +87,9 @@
             @foreach($timetables as $timetable)
             <tr>
               <td>{{$i++}}</td>
-              <td>{{$timetable->day}}</td>             
-              
-              <td>{{$timetable->starttime}}</td>
-              <td>{{$timetable->endtime}}</td>
+              <td>{{$timetable->class->grade->name}}</td>   
+              <td>{{$timetable->class->name}}</td>
+              <td>{{$timetable->academic->name}}</td>
               <td>
                  <a href="{{route('timetable.show',$timetable->id)}}" class="btn btn-primary"><i class="fas fa-info fa-1x"></i></a>
                 <a href="{{route('timetable.edit',$timetable->id)}}" class="btn btn-warning"><i class="fas fa-edit fa-1x"></i></a>

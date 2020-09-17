@@ -26,5 +26,13 @@ class Timetable extends Model
     {
         return $this->hasMany('App\Subject');
     }
+     public function day($value='')
+    {
+        return $this->belongsTo('App\Day');
+    }
+     public function time($value='')
+    {
+        return $this->belongsTo('App\Time');
+    }
     
 }
