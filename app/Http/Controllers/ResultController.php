@@ -7,6 +7,8 @@ use App\Academic;
 use App\Classes;
 use App\Grade;
 use App\Subject;
+use App\Result;
+use App\Examination;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -25,11 +27,14 @@ class ResultController extends Controller
      */
     public function create()
     { 
+        $academics=Academic::all();
         $students = Student::all();
         $examinations = Examination::all();
         $subjects=Subject::all();
+        $grades=Grade::all();
+        $classes=Classes::all();
 
-        return view('backend.payment.create',compact('classes','academics','students','examinations','subjects'));
+        return view('backend.payment.create',compact('academics','students','examinations','subjects','grades','classes'));
     }
 
     /**

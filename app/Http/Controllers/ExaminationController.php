@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Examination;
+use App\Exam;
 use App\Student;
 use App\Subject;
 use App\User;
 use App\Grade;
 use App\Academic;
+use App\Result;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,7 @@ class ExaminationController extends Controller
      */
     public function index()
     {
-        $examinations = Examination::all();
+        $examinations = Exam::all();
          return view('backend.examination.index',compact('examinations'));
     }
 
@@ -33,7 +34,7 @@ class ExaminationController extends Controller
     {
         
         $students = Student::all();
-        $examinations = Examination::all();
+        $examinations = Exam::all();
         $subjects = Subject::all();
         $grades=Grade::all();
         $academics=Academic::all();
@@ -61,15 +62,15 @@ class ExaminationController extends Controller
            
 
         ]);
-            $examination = new Examination;
-            $examination->ename = $request->ename;
+            $examination = new Exam;
+            $examination->name = $request->ename;
             $examination->exam_month = $request->exam_month;
             $examination->exam_date = $request->exam_date;
-            $examination->starttime = $request->starttime;
-            $examination->endtime = $request->endtime;
-            $examination->subject = $request->subject;
-            $examination->grade = $request->grade;
-            $examination->academic = $request->academic;
+            $examination->start_time = $request->starttime;
+            $examination->end_time = $request->endtime;
+            $examination->subject_id = $request->subject;
+            $examination->grade_id = $request->grade;
+            $examination->academic_id = $request->academic;
             $examination->save();
         
            return redirect()->route('examination.index');
@@ -81,7 +82,7 @@ class ExaminationController extends Controller
      * @param  \App\Examination  $examination
      * @return \Illuminate\Http\Response
      */
-    public function show(Examination $examination)
+    public function show(Exam $examination)
     {
          return view('backend.examination.detail',compact('examination'));
     }
@@ -92,10 +93,10 @@ class ExaminationController extends Controller
      * @param  \App\Examination  $examination
      * @return \Illuminate\Http\Response
      */
-    public function edit(Examination $examination)
+    public function edit(Exam $examination)
     {
         $students = Student::all();
-        $examinations = Examination::all();
+        $examinations = Exam::all();
         $subjects = Subject::all();
         $grades=Grade::all();
         $academics=Grade::all();
@@ -109,7 +110,7 @@ class ExaminationController extends Controller
      * @param  \App\Examination  $examination
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Examination $examination)
+    public function update(Request $request, Exam $examination)
     {
        $request->validate([
             "ename" => 'required',
@@ -125,7 +126,7 @@ class ExaminationController extends Controller
         ]);
 
           
-            $examination->ename = $request->ename;
+            $examination->name = $request->ename;
             $examination->exam_month = $request->exam_month;
             $examination->exam_date = $request->exam_date;
             $examination->starttime = $request->starttime;
@@ -144,7 +145,7 @@ class ExaminationController extends Controller
      * @param  \App\Examination  $examination
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Examination $examination)
+    public function destroy(Exam $examination)
     {
           $examination->delete();
         return redirect()->route('examination.index');

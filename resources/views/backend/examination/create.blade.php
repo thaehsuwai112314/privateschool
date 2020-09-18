@@ -26,7 +26,7 @@
           <div class="form-group row {{ $errors->has('result') ? 'has-error' : '' }}">
             <label for="exam_month" class="col-sm-2 col-form-label">Exam-Month</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="exam_month" name="exam_month">
+              <input type="month" class="form-control" id="exam_month" name="exam_month">
               <span class="text-danger">{{ $errors->first('exam_month') }}</span>
             </div>
           </div>

@@ -29,15 +29,6 @@ Route::get('backends','PageController@backendfun');
 
 // Route::resource('backends','BackendController');
 
-
-
-
-
-
-
-
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -52,6 +43,8 @@ Route::resource('timetable','TimetableController');
 Route::resource('grade','GradeController');
 Route::resource('academic','AcademicController');
 Route::resource('payment','PaymentController');
+Route::resource('result','ResultController');
+
 
 
 Route::get('backends', 'backenddController@backenddfun');
@@ -64,6 +57,8 @@ Route::post('studentgrade','StudentController@studentgrade')->name('studentgrade
 Route::post('teachersubject','TimetableController@teachersubject')->name('teachersubject');
 Route::post('timetableclass','TimetableController@timetableclass')->name('timetableclass');
 Route::post('paymentgrade','PaymentController@paymentgrade')->name('paymentgrade');
+
+Route::post('delete_teacher/{id}','TeacherController@delete_teacher')->name('delete_teacher');
 
 
 

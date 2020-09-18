@@ -83,7 +83,7 @@ class PaymentController extends Controller
     {
         $academics = Academic::all();
         $classes = Classes::all();
-        $students = Subject::all();
+        $students = Studentx::all();
         $grades = Grade::all();
         return view('backend.payment.edit',compact('academics','classes','grades','students','payment'));
     }

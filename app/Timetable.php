@@ -24,7 +24,7 @@ class Timetable extends Model
     }
      public function subject($value='')
     {
-        return $this->hasMany('App\Subject');
+        return $this->belongsTo('App\Subject');
     }
      public function day($value='')
     {

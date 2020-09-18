@@ -48,11 +48,13 @@
               <td>
                  <a href="{{route('teacher.show',$teacher->id)}}" class="btn btn-primary"><i class="fas fa-info fa-1x"></i></a>
                 <a href="{{route('teacher.edit',$teacher->id)}}" class="btn btn-warning"><i class="fas fa-edit fa-1x"></i></a>
-                            <form method="post" action="{{route('teacher.destroy',$teacher->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
+                            {{-- <form method="post" action="{{route('teacher.destroy',$teacher->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
                                 @csrf
                                 @method('DELETE')
                                 <button  type="submit" class="btn btn-danger"><i class="fas fa-trash fa-1x"></i></button> 
-                            </form>
+                            </form> --}}
+                            {{--Modified Delete--}}
+                            <a href="{{route('delete_teacher',$teacher->id)}}"></a>
               </td>
             </tr>
             @endforeach

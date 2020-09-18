@@ -84,16 +84,22 @@
           </thead>
           <tbody class="timetable">
             @php $i=1; @endphp
-            @foreach($timetables as $timetable)
+            {{-- @foreach($timetables as $timetable)
             <tr>
               <td>{{$i++}}</td>
               <td>{{$timetable->class->grade->name}}</td>   
               <td>{{$timetable->class->name}}</td>
-              <td>{{$timetable->academic->name}}</td>
+              <td>{{$timetable->academic->name}}</td> --}}
+              @foreach($classes as $class)
+              <tr>
+                <td>{{$i++}}</td>
+                <td>{{$class->grade->name}}</td>
+                <td>{{$class->name}}</td>
+                <td>@if(isset($class->timetable->academic)){{$class->timetable->academic->name}}@endif</td>
               <td>
-                 <a href="{{route('timetable.show',$timetable->id)}}" class="btn btn-primary"><i class="fas fa-info fa-1x"></i></a>
-                <a href="{{route('timetable.edit',$timetable->id)}}" class="btn btn-warning"><i class="fas fa-edit fa-1x"></i></a>
-                            <form method="post" action="{{route('timetable.destroy',$timetable->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
+                 <a href="{{route('timetable.show',$class->id)}}" class="btn btn-primary"><i class="fas fa-info fa-1x"></i></a>
+                <a href="{{route('timetable.edit',$class->id)}}" class="btn btn-warning"><i class="fas fa-edit fa-1x"></i></a>
+                            <form method="post" action="{{route('timetable.destroy',$class->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
                                 @csrf
                                 @method('DELETE')
                                 <button  type="submit" class="btn btn-danger"><i class="fas fa-trash fa-1x"></i></button> 

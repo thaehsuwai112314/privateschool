@@ -75,7 +75,8 @@ class TeacherController extends Controller
      */
     public function show(Teacher $teacher)
     {
-        return view('backend.teacher.detail',compact('teacher'));
+        $subject = Subject::all();
+        return view('backend.teacher.detail',compact('teacher','subject'));
     }
 
     /**
@@ -149,6 +150,12 @@ class TeacherController extends Controller
     public function destroy(Teacher $teacher)
     {
         $teacher->delete();
+        return redirect()->route('teacher.index');
+    }
+    public function delete_teacher($value='')
+    {
+        $teacher=Teacher::find($id);
+        $teacher->status=1;
         return redirect()->route('teacher.index');
     }
 }

@@ -11,7 +11,7 @@
  <div class="row">
       <div class="col-md-12">
         <table class="table table-bordered ml-3">
-          <thead class="thead-dark">
+          {{-- <thead class="thead-dark">
             <tr>
               <th>Day</th>
               <th>09:00-09:45</th>
@@ -21,7 +21,7 @@
               <th>01:00-01:45</th>
               <th>01:45-02:30</th>
               <th>02:30-03:15</th>
-              <tbody class="">
+              <tbody>
             <tr>
               <th>Monday</th>
               <th></th>
@@ -33,7 +33,7 @@
               <th></th>
             </tr>
             <tr>
-              <th>Tueday</th>
+              <th>Tuesday</th>
               <th></th>
               <th></th>
               <th></th>
@@ -72,10 +72,34 @@
               <th></th>
               <th></th>
             </tr>
+            </tbody>
+            </tr>
+          </thead> --}}
+          <thead class="thead-dark">
+            <tr>
+              <th>Day</th>
+              @foreach($times as $time)
+              <th>{{$time->name}}</th>
+              @endforeach
+            </tr>
           </thead>
+          <tbody class="table table-bordered ml-3">
+            @foreach($days as $day)
+            <tr>
+              <td>{{$day->name}}</td>
+              @foreach($times as $time)
+              <td>
+                @foreach($timetables as $timetable)
+                @if($timetable->day_id==$day->id && $timetable->time_id==$time->id)
+                {{$timetable->subject->name}}
+                @endif
+                @endforeach
+              </td>
+              @endforeach
+            </tr>
+            @endforeach
+          </tbody>
         </table>
       </div>
     </div>
-
-
 @endsection

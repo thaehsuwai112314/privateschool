@@ -17,6 +17,7 @@ class CreateExamsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('exam_month');
+            $table->date('exam_date');
             $table->string('start_time');
             $table->string('end_time');
 

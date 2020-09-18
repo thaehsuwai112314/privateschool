@@ -46,8 +46,8 @@
               <td>{{$examination->name}}</td>
               <td>{{$examination->exam_month}}</td>
               <td>{{$examination->exam_date}}</td>
-              <td>{{$examination->starttime}}</td>
-              <td>{{$examination->endtime}}</td>
+              <td>{{$examination->start_time}}</td>
+              <td>{{$examination->end_time}}</td>
               <td>{{$examination->subject->name}}</td>
               <td>{{$examination->grade->name}}</td>
               <td>{{$examination->academic->name}} </td>

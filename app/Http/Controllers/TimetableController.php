@@ -92,9 +92,12 @@ class TimetableController extends Controller
      * @param  \App\Timetable  $timetable
      * @return \Illuminate\Http\Response
      */
-    public function show(Timetable $timetable)
+    public function show($id)
     {
-         return view('backend.timetable.detail',compact('timetable'));
+        $days=Day::all();
+        $times=Time::all();
+        $timetables=Timetable::where('class_id',$id)->get();
+         return view('backend.timetable.detail',compact('timetables','days','times'));
     }
 
     /**
