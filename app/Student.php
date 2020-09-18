@@ -22,5 +22,9 @@ class Student extends Model
     {
     	return $this->belongsTo('App\Classes');
     }
+    public function payment($value='')
+    {
+        return $this->hasMany('App\Payment');
+    }
     
 }

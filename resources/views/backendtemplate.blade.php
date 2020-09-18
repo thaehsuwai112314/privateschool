@@ -42,9 +42,35 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="">
-          <i class="fas fa-book-reader"></i>
-          <span>Admin</span></a>
+       {{--  <a class="nav-link" href="http://127.0.0.1:8000/backends"> --}}
+           {{-- <span>Admin</span></a> --}}
+      <div class="col-lg-12 col-10 mx-2">
+
+                    @role('Admin')
+                        <span class="float-right d-xl-block d-lg-block d-md-block d-none">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle loginlink" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre >
+                            <i class="fas fa-book-reader"></i>
+                                {{Auth::user()->name}}
+                            </a>
+
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                    {{ __('logout')}}
+                                </a>
+                                <form id="logout-form" action="{{ route('logout')}}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                                
+                            </div>
+                            
+                        </span>
+                        @else
+                        <span>
+                    <a class="nav-link page-scroll" href="{{route('loginpage')}}">Login</a>
+                    </span>
+                        @endrole
+                    </div>
       </li>
 
       <!-- Divider -->
@@ -107,14 +133,29 @@
           <span>Academic</span></a>
       </li>
 
-       <!-- Nav Item - Grade -->
+        <!-- Nav Item - Payment -->
       <li class="nav-item">
-        <a class="nav-link" href="{{route('examination.index')}}">
-          <i class="fas fa-fw fa-book-open"></i>
-          <span>Examination</span></a>
+        <a class="nav-link" href="{{route('payment.index')}}">
+          <i class="fas fa-credit-card"></i>
+          <span>Payment</span></a>
       </li>
 
 
+       <!-- Nav Item - Exam -->
+      <li class="nav-item">
+        <a class="nav-link" href="">
+          <i class="fas fa-fw fa-book-open"></i>
+          <span>Exam</span></a>
+      </li>
+
+
+       <!-- Nav Item - Result -->
+      <li class="nav-item">
+        <a class="nav-link" href="">
+          <i class="fas fa-fw fa-book-open"></i>
+          <span>Result</span></a>
+      </li>
+      
       
 
       <!-- Divider -->
@@ -378,6 +419,8 @@
   <script src="{{ asset('backendCss/js/demo/chart-area-demo.js') }}"></script>
   <script src="{{ asset('backendCss/js/demo/chart-pie-demo.js') }}"></script>
   <script src="{{ asset('frontend/js/localstorage_custom.js') }}"></script>
+  @yield('script')
+
 </body>
 
 </html>

@@ -10,6 +10,7 @@ use App\Grade;
 use App\Subject;
 use App\Timetable;
 use App\Teacher;
+use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -21,10 +22,13 @@ class TimetableController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+         $academics = Academic::all();
+        $classes = Classes::all();
+        $grades = Grade::all();
          $timetables = Timetable::all();
-         return view('backend.timetable.index',compact('timetables'));
+         return view('backend.timetable.index',compact('timetables','academics','classes','grades'));
     }
 
     /**
@@ -102,10 +106,9 @@ class TimetableController extends Controller
         $classes = Classes::all();
         $grades = Grade::all();
         $subjects = Subject::all();
-        $timetables = Timetable::all();
         $teachers = Teacher::all();
 
-        return view('backend.student.edit',compact('academics','classes','grades','subjects','student','timetables','teachers'));
+        return view('backend.timetable.edit',compact('academics','classes','grades','subjects','timetable','teachers'));
     }
 
     /**
@@ -162,5 +165,18 @@ class TimetableController extends Controller
        return $teacher;
 
        
+    }
+    public function timetableclass(Request $request)
+    {
+          $class1 = $request->time_class;
+        $academic1=$request->time_academic;
+
+        $timetables=DB::table('timetables')->where([
+            ['class_id','=',$class1],
+            ['academic_id','=',$academic1],
+        ])->get();
+        
+ // dd($students);
+         return $timetables;
     }
 }

@@ -50,9 +50,9 @@ class LoginController extends Controller
             case 'Admin':
                     return redirect('backends');
                 break;
-                // case 'Teacher':
-                //     return redirect('teacher');
-                // break;
+                case 'Teacher':
+                    return redirect('teacherhomes');
+                break;
                 //  case 'Student':
                 //     return redirect('examination');
                 // break;

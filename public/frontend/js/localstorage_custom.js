@@ -67,4 +67,21 @@ $(document).ready(function(){
           
          }
       })
+
+ $('.paygrade').on('change',function(){
+    //alert('ok');
+    var notes = $(this).val();
+    console.log(notes);
+      $.post('/paymentgrade',{notes:notes},function(response){
+        console.log(response);
+        var html='';
+        $.each(response,function(i,v){
+          html+=`
+          <option value="${v.id}">${v.name}</option>
+          `;
+        })
+        $('.paystuclass').html(html);
+        })
+      })
+     
     })

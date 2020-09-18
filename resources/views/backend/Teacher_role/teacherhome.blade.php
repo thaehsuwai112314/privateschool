@@ -9,13 +9,13 @@
     <meta name="author" content="Inovatik">
 
     <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
-	<meta property="og:site_name" content="" /> <!-- website name -->
-	<meta property="og:site" content="" /> <!-- website link -->
-	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
-	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
-	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
-	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
-	<meta property="og:type" content="article" />
+  <meta property="og:site_name" content="" /> <!-- website name -->
+  <meta property="og:site" content="" /> <!-- website link -->
+  <meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+  <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+  <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+  <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+  <meta property="og:type" content="article" />
 
     <!-- Website Title -->
     <title>Evolo - StartUp HTML Landing Page Template</title>
@@ -48,16 +48,17 @@ div.speaker{
     <link href="{{asset('frontend/css/bootstrap.css')}}" rel="stylesheet">
     <link href="{{asset('frontend/css/fontawesome-all.css')}}" rel="stylesheet">
     <link href="{{asset('frontend/css/swiper.css')}}" rel="stylesheet">
-	<link href="{{asset('frontend/css/magnific-popup.css')}}" rel="stylesheet">
-	<link href="{{asset('frontend/css/styles.css')}}" rel="stylesheet">
-	
-	<!-- Favicon  -->
+  <link href="{{asset('frontend/css/magnific-popup.css')}}" rel="stylesheet">
+  <link href="{{asset('frontend/css/styles.css')}}" rel="stylesheet">
+  
+  <!-- Favicon  -->
     <link rel="icon" href="{{asset('frontend/images/favicon.png')}}">
+    @yield('style')
 </head>
 <body data-spy="scroll" data-target=".fixed-top">
     
     <!-- Preloader -->
-	<div class="spinner-wrapper">
+  <div class="spinner-wrapper">
         <div class="spinner">
             <div class="bounce1"></div>
             <div class="bounce2"></div>
@@ -85,35 +86,31 @@ div.speaker{
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="{{route('mainpage')}}">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link page-scroll" href="{{route('teacherhomepage')}}">Teachers <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#services">Services</a>
+                    <a class="nav-link page-scroll" href="{{route('studenthomepage')}}">Students</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#pricing">Pricing</a>
+                    <a class="nav-link page-scroll" href="">Class</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#request">Request</a>
+                    <a class="nav-link page-scroll" href="">Timetable</a>
                 </li>
 
                 <!-- Dropdown Menu -->          
-                <li class="nav-item dropdown">
+                <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">About</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">Terms Conditions</span></a>
                         <div class="dropdown-items-divide-hr"></div>
                         <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">Privacy Policy</span></a>
                     </div>
-                </li>
+                </li> -->
                 <!-- end of dropdown menu -->
-
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="{{route('contactpage')}}">Contact</a>
-                </li>
                 <li class="nav-item">
                     <div class="col-lg-12 col-10">
-                    @role('Student')
+                    @role('Teacher')
                         <span class="float-right d-xl-block d-lg-block d-md-block d-none">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle loginlink" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre >
                                 {{Auth::user()->name}}
@@ -173,57 +170,6 @@ div.speaker{
      @yield('content')
 
 
-   <!-- Customers -->
-    <div class="slider-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h5>Trusted By</h5>
-                    
-                    <!-- Image Slider -->
-                    <div class="slider-container">
-                        <div class="swiper-container image-slider">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="image-container">
-                                        <img class="img-responsive" src="{{asset('frontend/images/customer-logo-1.png')}}" alt="alternative">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="image-container">
-                                        <img class="img-responsive" src="{{asset('frontend/images/customer-logo-2.png')}}" alt="alternative">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="image-container">
-                                        <img class="img-responsive" src="{{asset('frontend/images/customer-logo-3.png')}}" alt="alternative">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="image-container">
-                                        <img class="img-responsive" src="{{asset('frontend/images/customer-logo-4.png')}}" alt="alternative">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="image-container">
-                                        <img class="img-responsive" src="{{asset('frontend/images/customer-logo-5.png')}}" alt="alternative">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="image-container">
-                                        <img class="img-responsive" src="{{asset('frontend/images/customer-logo-6.png')}}" alt="alternative">
-                                    </div>
-                                </div>
-                            </div> <!-- end of swiper-wrapper -->
-                        </div> <!-- end of swiper container -->
-                    </div> <!-- end of slider-container -->
-                    <!-- end of image slider -->
-
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of slider-1 -->
-    <!-- end of customers -->
     <!-- Footer -->
     <div class="footer">
         <div class="container">
@@ -302,7 +248,7 @@ div.speaker{
     </div> <!-- end of copyright --> 
     <!-- end of copyright -->
     
-    	
+      
     <!-- Scripts -->
     <script src="{{asset('frontend/js/jquery.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
     <script src="{{asset('frontend/js/popper.min.js')}}"></script> <!-- Popper tooltip library for Bootstrap -->
@@ -312,5 +258,6 @@ div.speaker{
     <script src="{{asset('frontend/js/jquery.magnific-popup.js')}}"></script> <!-- Magnific Popup for lightboxes -->
     <script src="{{asset('frontend/js/validator.min.js')}}"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
     <script src="{{asset('frontend/js/scripts.js')}}" rel="stylesheet"></script> <!-- Custom scripts -->
+    @yield('script')
 </body>
 </html>

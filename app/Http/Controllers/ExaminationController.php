@@ -18,8 +18,8 @@ class ExaminationController extends Controller
      */
     public function index()
     {
-        $examinations = Examination::all();
-         return view('backend.examination.index',compact('examinations'));
+        $exam = Exam::all();
+         return view('backend.exam.index',compact('exam'));
     }
 
     /**
@@ -31,9 +31,9 @@ class ExaminationController extends Controller
     {
         
         $students = Student::all();
-        $examinations = Examination::all();
+        $exam = Exam::all();
         $subjects = Subject::all();
-        return view('backend.examination.create',compact('students','examinations','subjects'));
+        return view('backend.exam.create',compact('students','exam','subjects'));
     }
 
     /**
