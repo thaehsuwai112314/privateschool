@@ -17,6 +17,9 @@ class PageController extends Controller
     public function loginfun($value=''){
     	return view('frontend.login');
     }
+     public function aboutfun($value=''){
+    	return view('frontend.about');
+    }
        
     
        

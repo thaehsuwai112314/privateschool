@@ -42,7 +42,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="http://127.0.0.1:8000/backends">
+        <a class="nav-link" href="{{route('backends.index')}}">
           <i class="fas fa-book-reader"></i>
           <span>Admin</span></a>
       </li>

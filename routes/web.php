@@ -23,6 +23,7 @@ Route::get('/', 'PageController@indexfun')->name('mainpage');
 Route::get('contacts', 'PageController@contactfun')->name('contactpage');
 
 Route::get('logins', 'PageController@loginfun')->name('loginpage');
+Route::get('abouts', 'PageController@aboutfun')->name('aboutpage');
 
 
 Route::get('backends','PageController@backendfun');
@@ -47,7 +48,7 @@ Route::resource('result','ResultController');
 
 
 
-Route::get('backends', 'backenddController@backenddfun');
+Route::resource('backends', 'BackendController');
 
 });
 

@@ -88,24 +88,17 @@ div.speaker{
                     <a class="nav-link page-scroll" href="{{route('mainpage')}}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#services">Services</a>
+                    <a class="nav-link page-scroll" href="{{route('aboutpage')}}">About</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#pricing">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#request">Request</a>
-                </li>
-
                 <!-- Dropdown Menu -->          
-                <li class="nav-item dropdown">
+{{--                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">About</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">Terms Conditions</span></a>
                         <div class="dropdown-items-divide-hr"></div>
                         <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">Privacy Policy</span></a>
                     </div>
-                </li>
+                </li> --}}
                 <!-- end of dropdown menu -->
 
                 <li class="nav-item">
@@ -150,7 +143,7 @@ div.speaker{
 
 
    <!-- Customers -->
-    <div class="slider-1">
+    {{-- <div class="slider-1">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -198,7 +191,7 @@ div.speaker{
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
-    </div> <!-- end of slider-1 -->
+    </div> --}} <!-- end of slider-1 -->
     <!-- end of customers -->
     <!-- Footer -->
     <div class="footer">
