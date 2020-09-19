@@ -18,12 +18,20 @@ class StudentpageController extends Controller
      	// $student= Student::where('id',$id)->first();
      	
      	// dd($user);
-        $user->password = bcrypt($request->password);
-        $user->save();
+        // $user->password = bcrypt($request->password);
+        // $user->save();
 
          // return back();
 
 
     		  return view('backend.Student_role.studentpassword',compact('user'));
+    	}
+    	public function studentpasschange(Request $request)
+    	{
+    		$id=Auth::user()->id;
+    		$user=User::find($id);
+    		$user->password = bcrypt($request->password);
+        	$user->save();
+        	return back();
     	}
 }

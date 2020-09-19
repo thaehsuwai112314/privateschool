@@ -16,16 +16,29 @@ class CreateResultsTable extends Migration
         Schema::create('results', function (Blueprint $table) {
             $table->id();
             $table->string('mark');
-
-            $table->unsignedBigInteger('subject_id');
+            $table->unsignedBigInteger('student_id');
+            $table->unsignedBigInteger('academic_id');
+            $table->unsignedBigInteger('grade_id');
+            $table->unsignedBigInteger('class_id');        
             $table->unsignedBigInteger('exam_id');
-
-            $table->foreign('subject_id')
-                  ->references('id')->on('subjects')
+            $table->unsignedBigInteger('subject_id');
+            $table->foreign('student_id')
+                  ->references('id')->on('students')
                   ->onDelete('cascade'); 
-
+            $table->foreign('academic_id')
+                  ->references('id')->on('academics')
+                  ->onDelete('cascade'); 
+            $table->foreign('grade_id')
+                  ->references('id')->on('grades')
+                  ->onDelete('cascade'); 
+             $table->foreign('class_id')
+                  ->references('id')->on('classes')
+                  ->onDelete('cascade');       
             $table->foreign('exam_id')
                   ->references('id')->on('exams')
+                  ->onDelete('cascade'); 
+            $table->foreign('subject_id')
+                  ->references('id')->on('subjects')
                   ->onDelete('cascade'); 
 
             $table->timestamps();

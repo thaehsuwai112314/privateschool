@@ -8,7 +8,7 @@ use App\Classes;
 use App\Grade;
 use App\Subject;
 use App\Result;
-use App\Examination;
+use App\Exam;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -16,6 +16,7 @@ class ResultController extends Controller
 {	
 	public function index()
     {
+
          $results = Result::all();
          return view('backend.result.index',compact('results'));
     }
@@ -29,12 +30,12 @@ class ResultController extends Controller
     { 
         $academics=Academic::all();
         $students = Student::all();
-        $examinations = Examination::all();
+        $exams = Exam::all();
         $subjects=Subject::all();
         $grades=Grade::all();
         $classes=Classes::all();
 
-        return view('backend.payment.create',compact('academics','students','examinations','subjects','grades','classes'));
+        return view('backend.result.create',compact('academics','students','exams','subjects','grades','classes'));
     }
 
     /**
@@ -48,12 +49,17 @@ class ResultController extends Controller
         
        $request->validate([
             "marks"=>'required',
-            "student_id"=>'required',
-            "exam_id" => 'required',
+            
         ]);
-            $result->marks = $request->marks;
+            $result = new Result;
+            $result->mark = $request->marks;
             $result->student_id = $request->student_id;
+            $result->academic_id=$request->academic_id;
+            $result->grade_id=$request->grade_id;
+            $result->class_id=$request->class_id;
+
             $result->exam_id = $request->exam_id;
+            $result->subject_id = $request->subject_id;
             
             $result->save();
         
@@ -64,40 +70,47 @@ class ResultController extends Controller
     {
          //return view('backend.result.create',compact('result'));
     }
-    public function edit(Payment $result)
+    public function edit(Result $result)
     {
+        $student=Student::all();
+        $grades=Grade::all();
         $academics = Academic::all();
         $classes = Classes::all();
-        $student = Subject::all();
-        return view('backend.student.edit',compact('academics','classes','grades','student'));
+        $subjects = Subject::all();
+        $exams = Exam::all();
+        return view('backend.result.edit',compact('academics','classes','grades','student','result','exams','subjects'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Payment  $payment
+     * @param  \App\Result  $result
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Payment $payment)
+    public function update(Request $request, Result $result)
     {
          $request->validate([
             "marks"=>'required',
-            "student_id"=>'required',
-            "exam_id" => 'required',
+            
         ]);
-           $result->marks = $request->marks;
+           $result->mark = $request->marks;
             $result->student_id = $request->student_id;
+            $result->academic_id=$request->academic_id;
+            $result->grade_id=$request->grade_id;
+            $result->class_id=$request->class_id;
             $result->exam_id = $request->exam_id;
+            $result->subject_id = $request->subject_id;
+
             
             $result->save();
         
            return redirect()->route('result.index'); 
             
     }
-    public function destroy(Payment $payment)
+    public function destroy(Result $result)
     {
-        $payment->delete();
-        return redirect()->route('payment.index');
+        $result->delete();
+        return redirect()->route('result.index');
     }
 }

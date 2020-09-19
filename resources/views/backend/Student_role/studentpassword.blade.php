@@ -31,7 +31,7 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <form action="{{route('studentpasswordpage')}}" method="get">
+                  <form action="{{route('studentpasschange')}}" method="post">
                     @csrf
                     
                     

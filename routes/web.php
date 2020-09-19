@@ -23,12 +23,14 @@ Route::resource('student','StudentController');
 Route::get('contacts', 'PageController@contactfun')->name('contactpage');
 
 Route::get('logins', 'PageController@loginfun')->name('loginpage');
+Route::get('abouts', 'PageController@aboutfun')->name('aboutpage');
 
 
 
 Route::middleware('role:Student')->group(function(){
 
 Route::get('studentpasswords', 'StudentpageController@studentpasswordfun')->name('studentpasswordpage');
+Route::post('studentpasschange', 'StudentpageController@studentpasschange')->name('studentpasschange');
 });
 
 
@@ -50,11 +52,13 @@ Route::resource('result','ResultController');
 
 
 Route::resource('examination','ExaminationController');
+ Route::resource('backends', 'BackendController');
+
 
 Route::resource('payment','PaymentController');
 
-Route::get('backends', 'backenddController@backenddfun');
-
+/*Route::get('backends', 'backenddController@backenddfun');
+*/
 Route::post('studentgrade','StudentController@studentgrade')->name('studentgrade');
 Route::post('teachersubject','TimetableController@teachersubject')->name('teachersubject');
 Route::post('timetableclass','TimetableController@timetableclass')->name('timetableclass');

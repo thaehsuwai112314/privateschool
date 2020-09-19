@@ -48,7 +48,7 @@ class LoginController extends Controller
         //Check user role
         switch ($role[0]) {
             case 'Admin':
-                    return redirect('backends');
+                    return redirect('teacher');
                 break;
                 case 'Teacher':
                     return redirect('teacherhomes');

@@ -40,8 +40,9 @@
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
-      <!-- Nav Item - Dashboard -->
+      <!-- Nav Item - Dashboard -->      
       <li class="nav-item active">
+
        {{--  <a class="nav-link" href="http://127.0.0.1:8000/backends"> --}}
            {{-- <span>Admin</span></a> --}}
       <div class="col-lg-12 col-10 mx-2">
@@ -71,7 +72,12 @@
                     </span>
                         @endrole
                     </div>
-      </li>
+{{-- =======
+        <a class="nav-link" href="{{route('backends.index')}}">
+          <i class="fas fa-book-reader"></i>
+          <span>Admin</span></a>--}}
+
+      </li> 
 
       <!-- Divider -->
       <hr class="sidebar-divider">

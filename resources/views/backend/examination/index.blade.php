@@ -15,7 +15,7 @@
 
         <div class="col-2">
           <a href="{{route('examination.create')}}" class="btn btn-success btn-block float-right"> 
-            <i class="fa fa-plus"></i> New Examonation 
+            <i class="fa fa-plus"></i> New Examination 
           </a>
         </div>
       </div>
@@ -55,7 +55,7 @@
 
 
               <td>
-                 <a href="{{route('examination.show',$examination->id)}}" class="btn btn-primary"><i class="fas fa-info fa-2x"></i></a>
+                 {{-- <a href="{{route('examination.show',$examination->id)}}" class="btn btn-primary"><i class="fas fa-info fa-2x"></i></a> --}}
                 <a href="{{route('examination.edit',$examination->id)}}" class="btn btn-warning"><i class="fas fa-edit fa-2x"></i></a>
                             <form method="post" action="{{route('examination.destroy',$examination->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
                                 @csrf

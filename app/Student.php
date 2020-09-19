@@ -22,9 +22,20 @@ class Student extends Model
     {
     	return $this->belongsTo('App\Classes');
     }
-    public function payment($value='')
+    public function student($value='')
     {
-        return $this->hasMany('App\Payment');
+        return $this->hasMany('App\Student');
     }
-    
+        public function grade($value='')
+    {
+        return $this->hasMany('App\Grade');
+    }
+     public function subject($value='')
+    {
+        return $this->hasMany('App\Subject');
+    }
+     public function result($value='')
+    {
+        return $this->belongsTo('App\Result');
+    }
 }
