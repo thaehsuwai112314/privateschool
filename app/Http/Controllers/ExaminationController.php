@@ -96,11 +96,10 @@ class ExaminationController extends Controller
     public function edit(Exam $examination)
     {
         $students = Student::all();
-        $examinations = Exam::all();
         $subjects = Subject::all();
         $grades=Grade::all();
         $academics=Grade::all();
-        return view('backend.examination.edit',compact('students','examinations','subjects','grades','academics'));
+        return view('backend.examination.edit',compact('students','examination','subjects','grades','academics'));
     }
 
     /**
@@ -129,8 +128,8 @@ class ExaminationController extends Controller
             $examination->name = $request->ename;
             $examination->exam_month = $request->exam_month;
             $examination->exam_date = $request->exam_date;
-            $examination->starttime = $request->starttime;
-            $examination->endtime = $request->endtime;
+            $examination->start_time = $request->starttime;
+            $examination->end_time = $request->endtime;
             $examination->subject = $request->subject;
             $examination->grade = $request->grade;
             $examination->academic = $request->academic;

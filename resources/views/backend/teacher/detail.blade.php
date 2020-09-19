@@ -19,7 +19,6 @@
         <p>Subject : {{$teacher->subject->name}}</p>
         <p>Email : {{$teacher->user->email}}</p>
         <p>Address : {{$teacher->address}}</p>
-        <p>DateOfBirth : {{$teacher->dob}} </p>
         <p>NRC : {{$teacher->nrc}} </p>
         <p>Phone No : {{$teacher->phoneno}}</p>
         <p>Salary :{{$teacher->salary}}</p>

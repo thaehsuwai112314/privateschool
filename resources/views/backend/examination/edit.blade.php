@@ -21,28 +21,28 @@
       <div class="form-group row {{ $errors->has('exam_month') ? 'has-error' : '' }}">
         <label for="exam_month" class="col-sm-2 col-form-label">Exam Month</label>
         <div class="col-sm-5">
-          <input type="number" class="form-control" id="exam_month" name="exam_month" value="{{$examination->exam_month}}">
+          <input type="month" class="form-control" id="exam_month" name="exam_month" value="{{$examination->exam_month}}">
           <span class="text-danger">{{ $errors->first('exam_month') }}</span>
         </div>
       </div>
       <div class="form-group row {{ $errors->has('exam_date') ? 'has-error' : '' }}">
         <label for="exam_date" class="col-sm-2 col-form-label">Exam Date</label>
         <div class="col-sm-5">
-          <input type="number" class="form-control" id="exam_date" name="exam_date" value="{{$examination->exam_date}}">
+          <input type="date" class="form-control" id="exam_date" name="exam_date" value="{{$examination->exam_date}}">
           <span class="text-danger">{{ $errors->first('exam_date') }}</span>
         </div>
       </div>
       <div class="form-group row {{ $errors->has('starttime') ? 'has-error' : '' }}">
             <label for="inputStarttime" class="col-sm-2 col-form-label">StartTime</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputStarttime" name="starttime" value="{{$timetable->starttime}}">
+              <input type="text" class="form-control" id="inputStarttime" name="starttime" value="{{$examination->start_time}}">
               <span class="text-danger">{{ $errors->first('starttime') }}</span>
             </div>
           </div>
           <div class="form-group row {{ $errors->has('endtime') ? 'has-error' : '' }}">
             <label for="inputEndtime" class="col-sm-2 col-form-label">EndTime</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputEndtime" name="endtime" value="{{$timetable->endtime}}">
+              <input type="text" class="form-control" id="inputEndtime" name="endtime" value="{{$examination->end_time}}">
               <span class="text-danger">{{ $errors->first('endtime') }}</span>
             </div>
           </div>
@@ -53,7 +53,7 @@
               <select class="form-control form-control-md" id="inputClass" name="subject">
                 <optgroup label="Choose Subjrct">
                     @foreach($subjects as $row)
-                <option value="{{$row->id}}" @if($subject->id == $row->id){{'selected'}} @endif>{{$row->name}}
+                <option value="{{$row->id}}" @if($examination->subject_id == $row->id){{'selected'}} @endif>{{$row->name}}
                 </option>
               @endforeach
                 </optgroup>
@@ -67,7 +67,7 @@
               <select class="form-control form-control-md" id="grade" name="grade">
                 <optgroup label="Choose Subjrct">
                     @foreach($grades as $row)
-                <option value="{{$row->id}}" @if($grade->id == $row->id){{'selected'}} @endif>{{$row->name}}
+                <option value="{{$row->id}}" @if($examination->grade_id == $row->id){{'selected'}} @endif>{{$row->name}}
                 </option>
               @endforeach
                 </optgroup>
@@ -81,7 +81,7 @@
               <select class="form-control form-control-md" id="inputAcademic" name="academic">
                 <optgroup label="Choose Academic">
                   @foreach($academics as $row)
-                <option value="{{$row->id}}" @if($payment->academic_id == $row->id){{'selected'}} @endif>{{$row->name}}
+                <option value="{{$row->id}}" @if($examination->academic_id == $row->id){{'selected'}} @endif>{{$row->name}}
                 </option>
               @endforeach
           </optgroup>
