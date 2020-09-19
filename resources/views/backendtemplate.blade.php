@@ -143,7 +143,7 @@
 
        <!-- Nav Item - Exam -->
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{route('examination.index')}}">
           <i class="fas fa-fw fa-book-open"></i>
           <span>Exam</span></a>
       </li>
@@ -151,7 +151,7 @@
 
        <!-- Nav Item - Result -->
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{route('result.index')}}">
           <i class="fas fa-fw fa-book-open"></i>
           <span>Result</span></a>
       </li>

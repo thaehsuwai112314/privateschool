@@ -80,7 +80,8 @@ class TeacherController extends Controller
      */
     public function show(Teacher $teacher)
     {
-        return view('backend.teacher.detail',compact('teacher'));
+        $subject = Subject::all();
+        return view('backend.teacher.detail',compact('teacher','subject'));
     }
 
     /**
@@ -119,8 +120,8 @@ class TeacherController extends Controller
         //file upload, if data
          if ($request->hasFile('photo')){
                $imageName = time().'.'.$request->photo->extension();
-            $request->photo->move(public_path('backend/stuimg'),$imageName);
-            $path = 'backend/stuimg/'.$imageName;
+            $request->photo->move(public_path('backend/teacherimg'),$imageName);
+            $path = 'backend/teacherimg/'.$imageName;
 
          }else{
                 $path = $request->oldphoto;
@@ -154,6 +155,12 @@ class TeacherController extends Controller
     public function destroy(Teacher $teacher)
     {
         $teacher->delete();
+        return redirect()->route('teacher.index');
+    }
+    public function delete_teacher($value='')
+    {
+        $teacher=Teacher::find($id);
+        $teacher->status=1;
         return redirect()->route('teacher.index');
     }
 }

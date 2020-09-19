@@ -7,7 +7,7 @@ use App\Academic;
 use App\Classes;
 use App\Grade;
 use App\Subject;
-use App\Payment;
+use App\payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -83,7 +83,7 @@ class PaymentController extends Controller
     {
         $academics = Academic::all();
         $classes = Classes::all();
-        $students = Subject::all();
+        $students = Studentx::all();
         $grades = Grade::all();
         return view('backend.payment.edit',compact('academics','classes','grades','students','payment'));
     }

@@ -18,7 +18,7 @@
 	<meta property="og:type" content="article" />
 
     <!-- Website Title -->
-    <title>Evolo - StartUp HTML Landing Page Template</title>
+    <title>Matric Private School Management</title>
     <style type="text/css">
         div.detail{
     background: rgba(6,12,34,0.76);
@@ -115,11 +115,12 @@ div.speaker{
                     <div class="col-lg-12 col-10">
                     @role('Student')
                         <span class="float-right d-xl-block d-lg-block d-md-block d-none">
+
                             <a id="navbarDropdown" class="nav-link dropdown-toggle loginlink" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre >
                                 {{Auth::user()->name}}
                             </a>
 
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {{-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
                                     {{ __('logout')}}
@@ -128,7 +129,20 @@ div.speaker{
                                     @csrf
                                 </form>
                                 
-                            </div>
+                            </div> --}}
+                            <div class="dropdown-menu mt-3" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{route('studentpasswordpage')}}"><span class="item-text">{{ __('Profile')}}</span></a>
+                                <div class="dropdown-items-divide-hr"></div>
+                                <a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                <span class="item-text">{{ __('logout')}}</span>
+                            </a>
+                            <form id="logout-form" action="{{ route('logout')}}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+
+
+                        </div>
                             
                         </span>
                         @else

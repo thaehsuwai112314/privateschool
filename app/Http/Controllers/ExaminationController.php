@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Examination;
+use App\Exam;
 use App\Student;
 use App\Subject;
 use App\User;
+use App\Grade;
+use App\Academic;
+use App\Result;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
@@ -18,8 +21,8 @@ class ExaminationController extends Controller
      */
     public function index()
     {
-        $exam = Exam::all();
-         return view('backend.exam.index',compact('exam'));
+        $examinations = Exam::all();
+         return view('backend.examination.index',compact('examinations'));
     }
 
     /**
@@ -31,9 +34,11 @@ class ExaminationController extends Controller
     {
         
         $students = Student::all();
-        $exam = Exam::all();
+        $examinations = Exam::all();
         $subjects = Subject::all();
-        return view('backend.exam.create',compact('students','exam','subjects'));
+        $grades=Grade::all();
+        $academics=Academic::all();
+        return view('backend.examination.create',compact('students','examinations','subjects','grades','academics'));
     }
 
     /**
@@ -46,26 +51,26 @@ class ExaminationController extends Controller
     {
          
         $request->validate([
-            
-            "name" => 'required',
             "ename" => 'required',
-            "result" => 'required',
+            "exam_month" => 'required',
+            "exam_date" => 'required',
+            "starttime" => 'required',
+            "endtime" => 'required',
             "subject" => 'required',
+            "grade" => 'required',
+            "academic" => 'required',
            
 
         ]);
-        
-            $user = new User;
-            $user->name = $request->name;
-            $user->email = $request->email;
-            $user->password =Hash::make('123456789');     
-            $user->save();
-            $id=$user->id;
-
-            $examination = new Examination;
-            $examination->ename = $request->ename;
-            $examination->result = $request->result;
-            $examination->subject = $request->subject;
+            $examination = new Exam;
+            $examination->name = $request->ename;
+            $examination->exam_month = $request->exam_month;
+            $examination->exam_date = $request->exam_date;
+            $examination->start_time = $request->starttime;
+            $examination->end_time = $request->endtime;
+            $examination->subject_id = $request->subject;
+            $examination->grade_id = $request->grade;
+            $examination->academic_id = $request->academic;
             $examination->save();
         
            return redirect()->route('examination.index');
@@ -77,7 +82,7 @@ class ExaminationController extends Controller
      * @param  \App\Examination  $examination
      * @return \Illuminate\Http\Response
      */
-    public function show(Examination $examination)
+    public function show(Exam $examination)
     {
          return view('backend.examination.detail',compact('examination'));
     }
@@ -88,12 +93,14 @@ class ExaminationController extends Controller
      * @param  \App\Examination  $examination
      * @return \Illuminate\Http\Response
      */
-    public function edit(Examination $examination)
+    public function edit(Exam $examination)
     {
         $students = Student::all();
-        $examinations = Examination::all();
+        $examinations = Exam::all();
         $subjects = Subject::all();
-        return view('backend.examination.edit',compact('students','examinations','subjects'));
+        $grades=Grade::all();
+        $academics=Grade::all();
+        return view('backend.examination.edit',compact('students','examinations','subjects','grades','academics'));
     }
 
     /**
@@ -103,30 +110,30 @@ class ExaminationController extends Controller
      * @param  \App\Examination  $examination
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Examination $examination)
+    public function update(Request $request, Exam $examination)
     {
-        $request->validate([
-            
-            "name" => 'required',
+       $request->validate([
             "ename" => 'required',
-            "result" => 'required',
+            "exam_month" => 'required',
+            "exam_date" => 'required',
+            "starttime" => 'required',
+            "endtime" => 'required',
             "subject" => 'required',
+            "grade" => 'required',
+            "academic" => 'required',
            
 
         ]);
-        
-            $user_id=$request->user_id;
-            $user=User::find($user_id);
-            $user->name = $request->name;
-            $user->email = $request->email;
-            $user->password =Hash::make('123456789');     
-            $user->save();
-            $id=$user->id;
 
           
-            $examination->ename = $request->ename;
-            $examination->result = $request->result;
+            $examination->name = $request->ename;
+            $examination->exam_month = $request->exam_month;
+            $examination->exam_date = $request->exam_date;
+            $examination->starttime = $request->starttime;
+            $examination->endtime = $request->endtime;
             $examination->subject = $request->subject;
+            $examination->grade = $request->grade;
+            $examination->academic = $request->academic;
             $examination->save();
         
            return redirect()->route('examination.index');
@@ -138,7 +145,7 @@ class ExaminationController extends Controller
      * @param  \App\Examination  $examination
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Examination $examination)
+    public function destroy(Exam $examination)
     {
           $examination->delete();
         return redirect()->route('examination.index');

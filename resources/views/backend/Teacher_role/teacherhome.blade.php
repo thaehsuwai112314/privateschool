@@ -91,23 +91,7 @@ div.speaker{
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="{{route('studenthomepage')}}">Students</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="">Class</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="">Timetable</a>
-                </li>
-
-                <!-- Dropdown Menu -->          
-                <!-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">About</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">Terms Conditions</span></a>
-                        <div class="dropdown-items-divide-hr"></div>
-                        <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">Privacy Policy</span></a>
-                    </div>
-                </li> -->
-                <!-- end of dropdown menu -->
+                
                 <li class="nav-item">
                     <div class="col-lg-12 col-10">
                     @role('Teacher')
@@ -116,17 +100,18 @@ div.speaker{
                                 {{Auth::user()->name}}
                             </a>
 
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu mt-3" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{route('teacherdetailpage')}}"><span class="item-text">{{ __('Profile')}}</span></a>
+                                <div class="dropdown-items-divide-hr"></div>
+
                                 <a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
-                                    {{ __('logout')}}
-                                </a>
-                                <form id="logout-form" action="{{ route('logout')}}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                                
-                            </div>
-                            
+                                <span class="item-text">{{ __('logout')}}</span>
+                            </a>
+                            <form id="logout-form" action="{{ route('logout')}}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>  
                         </span>
                         @else
                         <span>

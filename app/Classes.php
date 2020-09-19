@@ -18,4 +18,8 @@ class Classes extends Model
     {
     	return $this->hasMany('App\Student');
     }
+    public function timetable()
+    {
+        return $this->hasOne('App\Timetable','class_id');
+    }
 }

@@ -32,7 +32,7 @@
                       <th>Phoneno</th>
                       <th>Nrc</th>
                       <th>Photo</th>
-                      <th>Action</th>
+                      
                     </tr>
                   </thead>
                   <tfoot>
@@ -43,7 +43,7 @@
                       <th>Phoneno</th>
                       <th>Nrc</th>
                       <th>Photo</th>
-                      <th>Action</th>
+                      
                       
                     </tr>
                   </tfoot>
@@ -57,7 +57,7 @@
               <td>{{$teacher->phoneno}}</td>
               <td>{{$teacher->nrc}}</td>
               <td><img src="{{asset($teacher->photo)}}" width="120px" height="100px">
-              <td><a href="{{route('teacherdetailpage',$teacher->id)}}" class="btn btn-primary"><i class="fas fa-info fa-1x"></i></a></td>
+              {{-- <td><a href="{{route('teacherdetailpage',$teacher->id)}}" class="btn btn-primary"><i class="fas fa-info fa-1x"></i></a></td> --}}
             </tr>
             @endforeach
           </tbody>

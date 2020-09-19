@@ -106,7 +106,9 @@
             <div class="col-sm-5">
               <select class="form-control form-control-md subject grade_subjects " id="subject" name="subject">
                  @foreach($subjects as $subject)
-                    <option   value="{{$subject->id}}">{{$subject->name}}</option>
+                    @if($subject->name=="Biology" || $subject->name=="Economics" )
+                    <option value="{{$subject->id}}">{{$subject->name}}</option>
+                    @endif
                   @endforeach
               </select> 
               <span class="text-danger">{{ $errors->first('subject') }}</span>

@@ -15,9 +15,8 @@ class CreateTimetablesTable extends Migration
     {
         Schema::create('timetables', function (Blueprint $table) {
             $table->id();
-            $table->string('day');
-            $table->string('starttime');
-             $table->string('endtime');
+            $table->unsignedBigInteger('day_id');
+            $table->unsignedBigInteger('time_id');
 
 
             $table->unsignedBigInteger('class_id');
@@ -25,6 +24,12 @@ class CreateTimetablesTable extends Migration
             $table->unsignedBigInteger('academic_id');
             $table->unsignedBigInteger('teacher_id');
 
+            $table->foreign('day_id')
+                  ->references('id')->on('days')
+                  ->onDelete('cascade');
+            $table->foreign('time_id')
+                  ->references('id')->on('times')
+                  ->onDelete('cascade');
            
             $table->foreign('class_id')
                   ->references('id')->on('classes')
