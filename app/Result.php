@@ -7,7 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Result extends Model
 {
     protected $fillable = [
+
     	  'student_id','academic_id','grade_id','class_id','exam_id','subject_id','mark',
+
+    	 // 'student_id','academic_id','grade_id','class_id','exam_id','subject_id','mark'
+
 
     ];
      public function user($value='')

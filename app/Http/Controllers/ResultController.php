@@ -68,17 +68,17 @@ class ResultController extends Controller
 
     public function show(Result $result)
     {
-         //return view('backend.result.create',compact('result'));
+        return view('backend.result.detail',compact('result'));
     }
     public function edit(Result $result)
     {
-        $student=Student::all();
+        $students=Student::all();
         $grades=Grade::all();
         $academics = Academic::all();
         $classes = Classes::all();
         $subjects = Subject::all();
         $exams = Exam::all();
-        return view('backend.result.edit',compact('academics','classes','grades','student','result','exams','subjects'));
+        return view('backend.result.edit',compact('result','academics','classes','grades','students','exams','subjects'));
     }
 
     /**
@@ -92,7 +92,7 @@ class ResultController extends Controller
     {
          $request->validate([
             "marks"=>'required',
-            
+          
         ]);
            $result->mark = $request->marks;
             $result->student_id = $request->student_id;
