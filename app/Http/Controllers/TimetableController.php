@@ -75,7 +75,7 @@ class TimetableController extends Controller
             
 
             $timetable = new Timetable;
-            $timetable->day_id = $request->day;
+            $timetable->day = $request->day;
             $timetable->time_id = $request->time;
             $timetable->class_id= $request->class;
             $timetable->subject_id= $request->subject;

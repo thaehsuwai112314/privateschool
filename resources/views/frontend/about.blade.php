@@ -24,7 +24,7 @@
                     <!-- Team Member -->
                     <div class="team-member">
                         <div class="image-wrapper">
-                            <img class="img-fluid" style="width: 150px;height: 150px;" src="{{asset('frontend/images/c.jpg')}}" alt="alternative">
+                            <img class="img-fluid" style="width: 150px;height: 150px;" src="{{asset('frontend/images/f1.jpg')}}" alt="alternative">
                         </div> <!-- end of image-wrapper -->
                         <p class="p-large"><strong>Lacy Whitelong</strong></p>
                         <p class="job-title">Principle</p>
@@ -48,7 +48,7 @@
                     <!-- Team Member -->
                     <div class="team-member">
                         <div class="image-wrapper">
-                            <img class="img-fluid" style="width: 150px;height: 150px;" src="{{asset('frontend/images/b.jpg')}}" alt="alternative">
+                            <img class="img-fluid" style="width: 150px;height: 150px;" src="{{asset('frontend/images/f2.jpg')}}" alt="alternative">
                         </div> <!-- end of image wrapper -->
                         <p class="p-large"><strong>Chris Brown</strong></p>
                         <p class="job-title">Online Marketer</p>
@@ -72,7 +72,7 @@
                     <!-- Team Member -->
                     <div class="team-member">
                         <div class="image-wrapper">
-                            <img class="img-fluid" style="width: 150px;height: 150px;" src="{{asset('frontend/images/d.jpg')}}" alt="alternative">
+                            <img class="img-fluid" style="width: 150px;height: 150px;" src="{{asset('frontend/images/f3.jpg')}}" alt="alternative">
                         </div> <!-- end of image wrapper -->
                         <p class="p-large"><strong>Sheila Zimerman</strong></p>
                         <p class="job-title">Department of Management(Head)</p>
@@ -96,7 +96,7 @@
                     <!-- Team Member -->
                     <div class="team-member">
                         <div class="image-wrapper">
-                            <img class="img-fluid" style="width: 150px;height: 150px;" src="{{asset('frontend/images/a.jpg')}}" alt="alternative">
+                            <img class="img-fluid" style="width: 150px;height: 150px;" src="{{asset('frontend/images/f4.png')}}" alt="alternative">
                         </div> <!-- end of image wrapper -->
                         <p class="p-large"><strong>Mary Villalonga</strong></p>
                         <p class="job-title">Department of Teaching(Head)</p>

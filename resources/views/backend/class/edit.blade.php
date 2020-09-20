@@ -23,7 +23,7 @@
             <label for="inputGrade" class="col-sm-2 col-form-label">Grade</label>
             <div class="col-sm-5">
               <select class="form-control form-control-md" id="inputGrade" name="grade">
-                <optgroup label="Choose Grde">
+                <optgroup label="Choose Grade">
                  @foreach($grades as $row)
                 <option value="{{$row->id}}" @if($classes->grade_id == $row->id){{'selected'}} @endif>{{$row->name}}
                 </option>

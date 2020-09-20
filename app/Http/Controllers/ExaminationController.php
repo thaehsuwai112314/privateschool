@@ -132,11 +132,11 @@ class ExaminationController extends Controller
             $examination->end_time = $request->endtime;
             $examination->subject_id = $request->subject;
             $examination->grade_id = $request->grade;
-<<<<<<< HEAD
-            $examination->academic_id= $request->academic;
-=======
+
+           // $examination->academic_id= $request->academic;
+
             $examination->academic_id = $request->academic;
->>>>>>> aeb36cb15f29d940d4fb33222579bd6cca151d4a
+
             $examination->save();
         
            return redirect()->route('examination.index');

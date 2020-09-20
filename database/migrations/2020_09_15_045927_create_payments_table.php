@@ -24,12 +24,16 @@ class CreatePaymentsTable extends Migration
             $table->text('third_installation_payment')->nullable();
             $table->unsignedBigInteger('student_id');
             $table->unsignedBigInteger('class_id');
+            $table->unsignedBigInteger('grade_id');
             $table->unsignedBigInteger('academic_id');
             $table->foreign('student_id')
                   ->references('id')->on('students')
                   ->onDelete('cascade'); 
             $table->foreign('class_id')
                   ->references('id')->on('classes')
+                  ->onDelete('cascade'); 
+            $table->foreign('grade_id')
+                  ->references('id')->on('grades')
                   ->onDelete('cascade'); 
             $table->foreign('academic_id')
                   ->references('id')->on('academics')
