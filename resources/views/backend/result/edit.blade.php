@@ -108,7 +108,7 @@
             <input type="submit" class="btn btn-success form-control" id="submit" value="Update" name="btnsubmit">
           </div>
           <div class="col-3">
-        <a href="{{route('grade.index')}}" class="btn btn-success btn-block float-right"> 
+        <a href="{{route('result.index')}}" class="btn btn-success btn-block float-right"> 
           <i class="fas fa-backward pr-2"></i>  Back 
         </a>
       </div>
