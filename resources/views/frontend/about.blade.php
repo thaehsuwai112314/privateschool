@@ -24,7 +24,7 @@
                     <!-- Team Member -->
                     <div class="team-member">
                         <div class="image-wrapper">
-                            <img class="img-fluid" style="width: 150px;height: 150px;" src="{{asset('frontend/images/c.jpg')}}" alt="alternative">
+                            <img class="img-fluid" style="width: 150px;height: 150px;" src="{{asset('frontend/images/c.png')}}" alt="alternative">
                         </div> <!-- end of image-wrapper -->
                         <p class="p-large"><strong>Lacy Whitelong</strong></p>
                         <p class="job-title">Principle</p>
@@ -72,7 +72,7 @@
                     <!-- Team Member -->
                     <div class="team-member">
                         <div class="image-wrapper">
-                            <img class="img-fluid" style="width: 150px;height: 150px;" src="{{asset('frontend/images/d.jpg')}}" alt="alternative">
+                            <img class="img-fluid" style="width: 150px;height: 150px;" src="{{asset('frontend/images/d.png')}}" alt="alternative">
                         </div> <!-- end of image wrapper -->
                         <p class="p-large"><strong>Sheila Zimerman</strong></p>
                         <p class="job-title">Department of Management(Head)</p>

@@ -51,6 +51,7 @@ class PaymentController extends Controller
             "first_installation_date" => 'required',
             "first_installation_payment" => 'required',
             "class_id" => 'required',
+            "grade_id"=>'required',
              "academic_id" => 'required',
              
 
@@ -67,6 +68,7 @@ class PaymentController extends Controller
             $payment->third_installation_payment = $request->third_installation_payment;         
             $payment->student_id=$request->student_id;
             $payment->class_id=$request->class_id;
+            $payment->grade_id=$request->grade_id;
             $payment->academic_id=$request->academic_id;
             
             $payment->save();
@@ -98,21 +100,18 @@ class PaymentController extends Controller
     public function update(Request $request, Payment $payment)
     {
         $request->validate([
-            "user_id"=>'required',
             "total_amount" => 'required',
             "first_installation_date" => 'required',
             "first_installation_payment" => 'required',
+            "second_installation_date" => 'required',
+            "second_installation_payment" => 'required',
             "class_id" => 'required',
+            "grade_id"=>'required',
              "academic_id" => 'required',
              
 
         ]);
-            
-            $user->name = $request->name;
-            $user->save();
-            $id=$user->id;
-
-            
+                     
             $payment->total_amount = $request->total_amount;
             $payment->first_installation_date = $request->first_installation_date;
             $payment->first_installation_payment = $request->first_installation_payment;
@@ -122,6 +121,7 @@ class PaymentController extends Controller
             $payment->third_installation_payment = $request->third_installation_payment;         
             $payment->student_id=$request->student_id;
             $payment->class_id=$request->class_id;
+            $payment->grade_id=$request->grade_id;
             $payment->academic_id=$request->academic_id;
             
             $payment->save();

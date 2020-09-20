@@ -19,10 +19,10 @@
 
         <p>First Payment Date : {{$payment->first_installation_date}}</p>
         <p>First Payment Amount : {{$payment->first_installation_payment}} </p>
-        <p>Second Payment Date : {{$payment->secondpaymentdate}} </p>
-        <p>Second Payment Amount : {{$payment->secondpayment}}</p>
-        <p>Third Payment Date :{{$payment->thirdpaymentdate}}</p>
-        <p>Third Payment Amount : {{$payment->thirdpaymente}}</p>
+        <p>Second Payment Date : {{$payment->second_installation_date}} </p>
+        <p>Second Payment Amount : {{$payment->second_installation_payment}}</p>
+        <p>Third Payment Date :{{$payment->third_installation_date}}</p>
+        <p>Third Payment Amount : {{$payment->third_installation_payment}}</p>
         <p>Class : {{$payment->class->name}}</p>
         <p>Grade : {{$payment->class->grade->name}}</p>
   </div>
