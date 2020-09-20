@@ -98,7 +98,7 @@ class ExaminationController extends Controller
         $students = Student::all();
         $subjects = Subject::all();
         $grades=Grade::all();
-        $academics=Grade::all();
+        $academics=Academic::all();
         return view('backend.examination.edit',compact('students','examination','subjects','grades','academics'));
     }
 
@@ -130,9 +130,9 @@ class ExaminationController extends Controller
             $examination->exam_date = $request->exam_date;
             $examination->start_time = $request->starttime;
             $examination->end_time = $request->endtime;
-            $examination->subject = $request->subject;
-            $examination->grade = $request->grade;
-            $examination->academic = $request->academic;
+            $examination->subject_id = $request->subject;
+            $examination->grade_id = $request->grade;
+            $examination->academic_id = $request->academic;
             $examination->save();
         
            return redirect()->route('examination.index');
