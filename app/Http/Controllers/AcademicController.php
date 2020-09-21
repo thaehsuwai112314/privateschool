@@ -73,9 +73,9 @@ class AcademicController extends Controller
     public function edit(Academic $academic)
     {
          
-        $academics = Academic::all();
+        
        
-        return view('backend.academic.edit',compact('academics'));
+        return view('backend.academic.edit',compact('academic'));
     }
 
     /**

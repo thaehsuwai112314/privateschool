@@ -97,6 +97,7 @@ class TimetableController extends Controller
         $days=Day::all();
         $times=Time::all();
         $timetables=Timetable::where('class_id',$id)->get();
+        //dd($timetables);
          return view('backend.timetable.detail',compact('timetables','days','times'));
     }
 

@@ -7,7 +7,7 @@
     </h1>
   </div>
   <div class="container">
-    <form action="{{route('academic.update',$academics->id)}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('academic.update',$academic->id)}}" method="post" enctype="multipart/form-data">
       @csrf
       @method('PUT')
       

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Timetable extends Model
 {
      protected $fillable = [
-    	  'day','starttime','endtime','class_id','subject_id','academic_id','teacher_id'
+    	  'day','time_id','class_id','subject_id','academic_id','teacher_id'
 
     ];
      public function academic($value='')

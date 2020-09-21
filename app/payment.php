@@ -26,7 +26,8 @@ class payment extends Model
     {
         return $this->belongsTo('App\Student');
     }
-    public function grade($value='')
+
+     public function grade($value='')
     {
         return $this->belongsTo('App\Grade');
     }

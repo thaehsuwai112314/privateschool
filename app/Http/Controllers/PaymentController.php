@@ -51,7 +51,9 @@ class PaymentController extends Controller
             "first_installation_date" => 'required',
             "first_installation_payment" => 'required',
             "class_id" => 'required',
-            "grade_id" => 'required',
+
+            "grade_id"=>'required',
+
              "academic_id" => 'required',
              
 
@@ -100,29 +102,28 @@ class PaymentController extends Controller
     public function update(Request $request, Payment $payment)
     {
         $request->validate([
-            "user_id"=>'required',
-            "totalamount" => 'required',
-            "firstpaymentdate" => 'required',
-            "firstpayment" => 'required',
+
+            "total_amount" => 'required',
+            "first_installation_date" => 'required',
+            "first_installation_payment" => 'required',
+            "second_installation_date" => 'required',
+            "second_installation_payment" => 'required',
             "class_id" => 'required',
-            "grade_id" => 'required',
+            "grade_id"=>'required',
+
              "academic_id" => 'required',
              
 
         ]);
-            
-            $user->name = $request->name;
-            $user->save();
-            $id=$user->id;
 
-    //dd($request->second_installation_date);
-            $payment->total_amount = $request->totalamount;
-            $payment->first_installation_date = $request->firstpaymentdate;
-            $payment->first_installation_payment = $request->firstpayment;
-            $payment->second_installation_date =$request->secondpaymentdate;
-            $payment->second_installation_payment = $request->secondpayment;
-            $payment->third_installation_date =$request->thirdpaymentdate;
-            $payment->third_installation_payment = $request->thirdpayment;         
+                     
+            $payment->total_amount = $request->total_amount;
+            $payment->first_installation_date = $request->first_installation_date;
+            $payment->first_installation_payment = $request->first_installation_payment;
+            $payment->second_installation_date =$request->second_installation_date;
+            $payment->second_installation_payment = $request->second_installation_payment;
+            $payment->third_installation_date =$request->third_installation_date;
+            $payment->third_installation_payment = $request->third_installation_payment;         
             $payment->student_id=$request->student_id;
             $payment->class_id=$request->class_id;
             $payment->grade_id=$request->grade_id;

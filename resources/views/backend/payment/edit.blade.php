@@ -15,7 +15,8 @@
       <div class="col-md-12">
         <form action="{{route('payment.update',$payment->id)}}" method="post" enctype="multipart/form-data">
           @csrf
-      @method('PUT')
+
+          @method('PATCH')
 
   <div class="form-group row {{ $errors->has('name') ? 'has-error' : '' }}">
             <label for="inputName" class="col-sm-2 col-form-label">Student Name</label>
@@ -30,7 +31,9 @@
               <span class="text-danger">{{ $errors->first('student') }}</span>
             </div>
           </div>
-           <div class="form-group row {{ $errors->has('grade') ? 'has-error' : '' }}">
+
+          <div class="form-group row {{ $errors->has('grade') ? 'has-error' : '' }}">
+
             <label for="inputGrade" class="col-sm-2 col-form-label">Grade</label>
             <div class="col-sm-5">
               <select class="form-control form-control-md" id="inputGrade" name="grade_id">
@@ -75,50 +78,50 @@
           <div class="form-group row {{ $errors->has('totalamount') ? 'has-error' : '' }}">
             <label for="totalamount" class="col-sm-2 col-form-label">Total Amount</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="totalamount" name="totalamount" value="{{$payment->total_amount}}" >
+              <input type="text" class="form-control" id="total_amount" name="total_amount" value="{{$payment->total_amount}}" >
               <span class="text-danger">{{ $errors->first('totalamount') }}</span>
             </div>
           </div>
-          <div class="form-group row {{ $errors->has('firstpaymentdate') ? 'has-error' : '' }}">
-            <label for="firstpaymentdate" class="col-sm-2 col-form-label">First Payment Date</label>
+          <div class="form-group row {{ $errors->has('first_installation_date') ? 'has-error' : '' }}">
+            <label for="first_installation_date" class="col-sm-2 col-form-label">First Payment Date</label>
             <div class="col-sm-5">
-              <input type="date" class="form-control" id="firstpaymentdate" name="firstpaymentdate" value="{{$payment->first_installation_date}}">
-              <span class="text-danger">{{ $errors->first('firstpaymentdate') }}</span>
+              <input type="date" class="form-control" id="first_installation_date" name="first_installation_date" value="{{$payment->first_installation_date}}">
+              <span class="text-danger">{{ $errors->first('first_installation_date') }}</span>
             </div>
           </div>
-          <div class="form-group row {{ $errors->has('firstpayment') ? 'has-error' : '' }}">
-            <label for="firstpayment" class="col-sm-2 col-form-label">First Payment Amount</label>
+          <div class="form-group row {{ $errors->has('first_installation_payment') ? 'has-error' : '' }}">
+            <label for="first_installation_payment" class="col-sm-2 col-form-label">First Payment Amount</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="firstpayment" name="firstpayment" value="{{$payment->first_installation_payment}}">
-              <span class="text-danger">{{ $errors->first('firstpayment') }}</span>
+              <input type="text" class="form-control" id="firstpayment" name="first_installation_payment" value="{{$payment->first_installation_payment}}">
+              <span class="text-danger">{{ $errors->first('first_installation_payment') }}</span>
             </div>
           </div>
-          <div class="form-group row {{ $errors->has('secondpaymentdate') ? 'has-error' : '' }}">
-            <label for="secondpaymentdate" class="col-sm-2 col-form-label">Second Payment Date</label>
+          <div class="form-group row {{ $errors->has('second_installation_date') ? 'has-error' : '' }}">
+            <label for="second_installation_date" class="col-sm-2 col-form-label">Second Payment Date</label>
             <div class="col-sm-5">
-              <input type="date" class="form-control" id="secondpaymentdate" name="secondpaymentdate" value="{{$payment->second_installation_date}}">
-              <span class="text-danger">{{ $errors->first('secondpaymentdate') }}</span>
+              <input type="date" class="form-control" id="second_installation_date" name="second_installation_date" value="{{$payment->second_installation_date}}">
+              <span class="text-danger">{{ $errors->first('second_installation_date') }}</span>
             </div>
           </div>
-          <div class="form-group row {{ $errors->has('secondpayment') ? 'has-error' : '' }}">
-            <label for="secondpayment" class="col-sm-2 col-form-label">Second Payment Amount</label>
+          <div class="form-group row {{ $errors->has('second_installation_payment') ? 'has-error' : '' }}">
+            <label for="second_installation_payment" class="col-sm-2 col-form-label">Second Payment Amount</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="secondpayment" name="secondpayment" value="{{$payment->second_installation_payment}}" >
-              <span class="text-danger">{{ $errors->first('secondpayment') }}</span>
+              <input type="text" class="form-control" id="second_installation_payment" name="second_installation_payment" value="{{$payment->second_installation_payment}}" >
+              <span class="text-danger">{{ $errors->first('second_installation_payment') }}</span>
             </div>
           </div>
-          <div class="form-group row {{ $errors->has('thirdpaymentdate') ? 'has-error' : '' }}">
-            <label for="thirdpaymentdate" class="col-sm-2 col-form-label">Third Payment Date</label>
+          <div class="form-group row {{ $errors->has('third_installation_date') ? 'has-error' : '' }}">
+            <label for="third_installation_date" class="col-sm-2 col-form-label">Third Payment Date</label>
             <div class="col-sm-5">
-              <input type="date" class="form-control" id="thirdpaymentdate" name="thirdpaymentdate" value="{{$payment->third_installation_date}}">
-              <span class="text-danger">{{ $errors->first('thirdpaymentdate') }}</span>
+              <input type="date" class="form-control" id="third_installation_date" name="third_installation_date" value="{{$payment->third_installation_date}}">
+              <span class="text-danger">{{ $errors->first('third_installation_date') }}</span>
             </div>
           </div>
-          <div class="form-group row {{ $errors->has('thirdpayment') ? 'has-error' : '' }}">
-            <label for="thirdpayment" class="col-sm-2 col-form-label">Third Payment Amount</label>
+          <div class="form-group row {{ $errors->has('third_installation_payment') ? 'has-error' : '' }}">
+            <label for="third_installation_payment" class="col-sm-2 col-form-label">Third Payment Amount</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="thirdpayment" name="thirdpayment" value="{{$payment->third_installation_payment}}">
-              <span class="text-danger">{{ $errors->first('thirdpayment') }}</span>
+              <input type="text" class="form-control" id="third_installation_payment" name="third_installation_payment" value="{{$payment->third_installation_payment}}">
+              <span class="text-danger">{{ $errors->first('third_installation_payment') }}</span>
             </div>
           </div>
           <div class="form-group row">

@@ -28,7 +28,7 @@
               <span class="text-danger">{{ $errors->first('academic') }}</span>
             </div>
           </div>
-                    <div class="form-group row {{ $errors->has('grade') ? 'has-error' : '' }}">
+          <div class="form-group row {{ $errors->has('grade') ? 'has-error' : '' }}">
             <label for="inputGrade" class="col-sm-2 col-form-label">Grade</label>
             <div class="col-sm-5">
               <select class="form-control form-control-md paygrade"  id="inputGrade year" name="grade_id">

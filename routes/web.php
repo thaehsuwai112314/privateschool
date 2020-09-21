@@ -31,6 +31,7 @@ Route::middleware('role:Student')->group(function(){
 
 Route::get('studentpasswords', 'StudentpageController@studentpasswordfun')->name('studentpasswordpage');
 Route::post('studentpasschange', 'StudentpageController@studentpasschange')->name('studentpasschange');
+Route::get('studentroletimetable/{class_id}/{academic_id}', 'StudentpageController@studentroletimetablefun')->name('studentroletimetablepage');
 });
 
 

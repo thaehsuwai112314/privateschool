@@ -1,6 +1,5 @@
-@extends('backendtemplate')
-
-@section('contend')
+@extends('frontend.master')
+@section('content')
 <div class="container-fluid">
   <!-- Page Heading -->
   <div class="row mb-5">

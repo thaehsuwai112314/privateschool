@@ -8,7 +8,16 @@
     </div>
   </div>
 
+  
+   <div class="container">
+<div class="row">
+ {{--  <form action="{{route('studentroletimetablepage')}}" method="post"> --}}
 
+ <a href="{{route('studentroletimetablepage',[$student->class_id,$student->academic_id])}}"> <input type="submit"  class="btn btn-primary float-right" value="Timetable"></a>
+
+  {{-- </form> --}}
+</div>
+</div>
    <div class="container table-bordered border-info my-3">
 
     <div class="row">
