@@ -13,7 +13,7 @@
 <div class="row">
  {{--  <form action="{{route('studentroletimetablepage')}}" method="post"> --}}
 
- <a href="{{route('studentroletimetablepage',[$student->class_id,$student->academic_id])}}"> <input type="submit"  class="btn btn-primary float-right" value="Timetable"></a>
+ <a href="{{route('studentroletimetablepage',[$student->class_id,$student->academic_id,$student->id])}}"> <input type="submit"  class="btn btn-primary float-right" value="Timetable"></a>
 
   {{-- </form> --}}
 </div>

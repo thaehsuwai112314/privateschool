@@ -4,8 +4,11 @@
   <!-- Page Heading -->
   <div class="row mb-5">
     <div class="col-md-12">
-      <h1 class="h3 mb-0 text-gray-800 d-inline-block"> <i class="fas fa-table"></i> Timetable Detail </h1>
+      <h1 class="h3 mb-0 text-gray-800 d-inline-block"> <i class="fas fa-table"></i> Timetable Detail&nbsp;(&nbsp;Class:&nbsp;{{$student->class->name}}&nbsp;,&nbsp;Academic year:&nbsp;{{$student->academic->name}}&nbsp;) </h1>
     </div>
+    {{-- <div>
+      <p> Class:{{$student->class->name}}</p>
+    </div> --}}
   </div>
  <div class="row">
       <div class="col-md-12">

@@ -38,7 +38,7 @@ class StudentpageController extends Controller
         	$user->save();
         	return back();
     	}
-        public function studentroletimetablefun($class_id,$academic_id)
+        public function studentroletimetablefun($class_id,$academic_id,$student_id)
         {
 
             //dd($academic_id);
@@ -49,9 +49,10 @@ class StudentpageController extends Controller
             // return back();
             $days=Day::all();
         $times=Time::all();
+        $student=Student::find($student_id);
         $timetables=Timetable::where('class_id',$class_id)
                               ->where('academic_id',$academic_id)->get();
         
-            return view('backend.Student_role.studentroletimetable',compact('days','times','timetables'));
+            return view('backend.Student_role.studentroletimetable',compact('days','times','timetables','student'));
         }
 }
