@@ -90,7 +90,7 @@
               @foreach($times as $time)
               <td>
                 @foreach($timetables as $timetable)
-                @if($timetable->day==$day->id && $timetable->time_id==$time->id)
+                @if($timetable->day_id==$day->id && $timetable->time_id==$time->id)
                 {{$timetable->subject->name}}
                 @endif
                 @endforeach
